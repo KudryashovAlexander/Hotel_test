@@ -51,17 +51,17 @@ struct TouristView: View {
     }
     
     private var nameTextField: some View {
-        TextField("Имя", text: $name)
+        TextField(L.Booking.Tourist.name, text: $name)
             .modifyTF()
     }
     
     private var surNameTextField: some View {
-        TextField("Фамилия", text: $surName)
+        TextField(L.Booking.Tourist.surName, text: $surName)
             .modifyTF()
     }
     
     private var dayBirthdayTextField: some View {
-        TextField("Дата рождения", text: Binding(
+        TextField(L.Booking.Tourist.birthday, text: Binding(
                    get: {
                        let dateFormatter = DateFormatter()
                        dateFormatter.dateFormat = "dd.MM.yyyy"
@@ -81,17 +81,17 @@ struct TouristView: View {
     }
     
     private var nationalityTextField: some View {
-        TextField("Гражданство", text: $nationality)
+        TextField(L.Booking.Tourist.nationality, text: $nationality)
             .modifyTF()
     }
     
     private var passportTextField: some View {
-        TextField("Номер загранпаспорта", value:$passport, formatter: NumberFormatter())
+        TextField(L.Booking.Tourist.passport, value:$passport, formatter: NumberFormatter())
             .modifyTF()
     }
     
     private var passportEndDayTextField: some View {
-        TextField("Срок действия загранпаспорта", text: Binding(
+        TextField(L.Booking.Tourist.passportEndDay, text: Binding(
                    get: {
                        let dateFormatter = DateFormatter()
                        dateFormatter.dateFormat = "dd.MM.yyyy"
@@ -112,7 +112,7 @@ struct TouristView: View {
 }
 
 #Preview {
-    TouristView(numberTourist: "Первый турист")
+    TouristView(numberTourist: L.Booking.Tourist.first)
 }
 
 extension DateFormatter {

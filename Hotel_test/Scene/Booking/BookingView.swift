@@ -18,8 +18,8 @@ struct BookingView: View {
                 hotelName
                 detail
                 buyer
-                TouristView(numberTourist: "Первый турист")
-                TouristView(numberTourist: "Второй турист")
+                TouristView(numberTourist: L.Booking.Tourist.first)
+                TouristView(numberTourist: L.Booking.Tourist.second)
                 price
             }
         }
@@ -45,26 +45,26 @@ struct BookingView: View {
     
     private var detail: some View {
         VStack(spacing:16) {
-            detailView(name: "Вылет из", detail: "Санкт-Петербург")
-            detailView(name: "Страна, город", detail: "Египет, Хургада")
-            detailView(name: "Даты", detail: "19.09.2023 – 27.09.2023")
-            detailView(name: "Кол-во ночей", detail: "7 ночей")
-            detailView(name: "Отель", detail: "Steigenberger Makadi")
-            detailView(name: "Номер", detail: "Стандартный с видом на бассейн или сад")
-            detailView(name: "Питание", detail: "Все включено")
+            detailView(name: L.Booking.Detail.departure, detail: "Санкт-Петербург")
+            detailView(name: L.Booking.Detail.countryCity, detail: "Египет, Хургада")
+            detailView(name: L.Booking.Detail.date, detail: "19.09.2023 – 27.09.2023")
+            detailView(name: L.Booking.Detail.numberDays, detail: "7 ночей")
+            detailView(name: L.Booking.Detail.hotel, detail: "Steigenberger Makadi")
+            detailView(name: L.Booking.Detail.apartment, detail: "Стандартный с видом на бассейн или сад")
+            detailView(name: L.Booking.Detail.eating, detail: "Все включено")
         }
         .modify()
     }
     
     private var buyer: some View {
         VStack(alignment: .leading) {
-            Text("Информация о покупателе")
+            Text(L.Booking.Byer.information)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
                 .multilineTextAlignment(.leading)
-            textFieldView(placeholder: "Номер телефона", binding: $phone)
-            textFieldView(placeholder: "Почта", binding: $mail)
-            Text("Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту")
+            textFieldView(placeholder: L.Booking.Byer.phone, binding: $phone)
+            textFieldView(placeholder: L.Booking.Byer.mail, binding: $mail)
+            Text(L.Booking.Byer.comment)
                 .font(.Regular.size14)
                 .foregroundColor(.hGray)
         }
@@ -73,10 +73,10 @@ struct BookingView: View {
     
     private var price: some View {
         VStack(spacing: 16) {
-            priceView(name: "Тур", price: "186 600Р")
-            priceView(name: "Топливный сбор", price: "9 300Р")
-            priceView(name: "Сервисный сбор", price: "2 136Р")
-            priceView(name: "К оплате", price: "198 036Р")
+            priceView(name: L.Booking.Pay.tour, price: "186 600Р")
+            priceView(name: L.Booking.Pay.fuelСollection, price: "9 300Р")
+            priceView(name: L.Booking.Pay.serviceFee, price: "2 136Р")
+            priceView(name: L.Booking.Pay.paid, price: "198 036Р")
         }
         .modify()
     }

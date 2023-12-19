@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75F079C918ECEB095286594D /* Pods_Hotel_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60D01AF9746F887402AB0CE /* Pods_Hotel_test.framework */; };
+		781FA4B0574153BBF7248EC6 /* Pods_Hotel_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BFD944F95BC72DE43E1480 /* Pods_Hotel_test.framework */; };
 		7F9CF9AB2B2F73C0005A4833 /* HotelTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CF9AA2B2F73C0005A4833 /* HotelTestApp.swift */; };
 		7F9CF9AD2B2F73C0005A4833 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CF9AC2B2F73C0005A4833 /* ContentView.swift */; };
 		7F9CF9AF2B2F73C2005A4833 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CF9AE2B2F73C2005A4833 /* Colors.xcassets */; };
@@ -25,10 +25,15 @@
 		7F9CF9DA2B31903F005A4833 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CF9D92B31903F005A4833 /* HotelModel.swift */; };
 		7F9CF9DE2B319286005A4833 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CF9DD2B319286005A4833 /* Icons.xcassets */; };
 		7F9CF9E02B3192B4005A4833 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CF9DF2B3192B4005A4833 /* Images.xcassets */; };
+		7FBCD3822B31D4A000C0D6B2 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3802B31D4A000C0D6B2 /* XCAssets+Generated.swift */; };
+		7FBCD3832B31D4A000C0D6B2 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3812B31D4A000C0D6B2 /* Strings+Generated.swift */; };
+		7FFA9E962B31BD550055E253 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E952B31BD550055E253 /* swiftgen.yml */; };
+		7FFA9E9C2B31CD6F0055E253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E963F68C372EE16FE53569A /* Pods-Hotel_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.debug.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.debug.xcconfig"; sourceTree = "<group>"; };
+		24BFD944F95BC72DE43E1480 /* Pods_Hotel_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotel_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55DB0314DB124131BFFA23E9 /* Pods-Hotel_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.release.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.release.xcconfig"; sourceTree = "<group>"; };
 		7F9CF9A72B2F73C0005A4833 /* Hotel_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotel_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9CF9AA2B2F73C0005A4833 /* HotelTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTestApp.swift; sourceTree = "<group>"; };
 		7F9CF9AC2B2F73C0005A4833 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,8 +52,11 @@
 		7F9CF9D92B31903F005A4833 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		7F9CF9DD2B319286005A4833 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		7F9CF9DF2B3192B4005A4833 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		896FE4A5BBE2CC7EECE94AB8 /* Pods-Hotel_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.release.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.release.xcconfig"; sourceTree = "<group>"; };
-		F60D01AF9746F887402AB0CE /* Pods_Hotel_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotel_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBCD3802B31D4A000C0D6B2 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		7FBCD3812B31D4A000C0D6B2 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		7FFA9E952B31BD550055E253 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		7FFA9EA12B31CEC80055E253 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.debug.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75F079C918ECEB095286594D /* Pods_Hotel_test.framework in Frameworks */,
+				781FA4B0574153BBF7248EC6 /* Pods_Hotel_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,18 +74,10 @@
 		0A4F7EE46EAA9F6448CAB174 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7E963F68C372EE16FE53569A /* Pods-Hotel_test.debug.xcconfig */,
-				896FE4A5BBE2CC7EECE94AB8 /* Pods-Hotel_test.release.xcconfig */,
+				E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */,
+				55DB0314DB124131BFFA23E9 /* Pods-Hotel_test.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		2772A133C37F98CCC48B9CF4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F60D01AF9746F887402AB0CE /* Pods_Hotel_test.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7F9CF99E2B2F73C0005A4833 = {
@@ -86,7 +86,7 @@
 				7F9CF9A92B2F73C0005A4833 /* Hotel_test */,
 				7F9CF9A82B2F73C0005A4833 /* Products */,
 				0A4F7EE46EAA9F6448CAB174 /* Pods */,
-				2772A133C37F98CCC48B9CF4 /* Frameworks */,
+				D7F82B378D47343BECBCDBD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +101,7 @@
 		7F9CF9A92B2F73C0005A4833 /* Hotel_test */ = {
 			isa = PBXGroup;
 			children = (
+				7FFA9E952B31BD550055E253 /* swiftgen.yml */,
 				7F9CF9AA2B2F73C0005A4833 /* HotelTestApp.swift */,
 				7F9CF9CA2B30B118005A4833 /* Model */,
 				7F9CF9BB2B2F80FA005A4833 /* Scene */,
@@ -195,11 +196,30 @@
 		7F9CF9DC2B319202005A4833 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7F9CF9AE2B2F73C2005A4833 /* Colors.xcassets */,
-				7F9CF9DD2B319286005A4833 /* Icons.xcassets */,
+				7FFA9E972B31CA0C0055E253 /* Generated */,
 				7F9CF9DF2B3192B4005A4833 /* Images.xcassets */,
+				7F9CF9DD2B319286005A4833 /* Icons.xcassets */,
+				7F9CF9AE2B2F73C2005A4833 /* Colors.xcassets */,
+				7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7FFA9E972B31CA0C0055E253 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7FBCD3812B31D4A000C0D6B2 /* Strings+Generated.swift */,
+				7FBCD3802B31D4A000C0D6B2 /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		D7F82B378D47343BECBCDBD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24BFD944F95BC72DE43E1480 /* Pods_Hotel_test.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9CF9B52B2F73C2005A4833 /* Build configuration list for PBXNativeTarget "Hotel_test" */;
 			buildPhases = (
-				AA61B15973CE6821C031A592 /* [CP] Check Pods Manifest.lock */,
+				7A7399D3470CBC2742DC4BF1 /* [CP] Check Pods Manifest.lock */,
+				7F9CF9E22B31B6CD005A4833 /* SwiftGen */,
+				7F9CF9E12B31A3E9005A4833 /* SwiftLint */,
 				7F9CF9A32B2F73C0005A4833 /* Sources */,
 				7F9CF9A42B2F73C0005A4833 /* Frameworks */,
 				7F9CF9A52B2F73C0005A4833 /* Resources */,
-				7F9CF9E12B31A3E9005A4833 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -246,6 +267,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 7F9CF99E2B2F73C0005A4833;
 			productRefGroup = 7F9CF9A82B2F73C0005A4833 /* Products */;
@@ -263,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9CF9B22B2F73C2005A4833 /* Preview Assets.xcassets in Resources */,
+				7FFA9E9C2B31CD6F0055E253 /* Localizable.strings in Resources */,
+				7FFA9E962B31BD550055E253 /* swiftgen.yml in Resources */,
 				7F9CF9E02B3192B4005A4833 /* Images.xcassets in Resources */,
 				7F9CF9DE2B319286005A4833 /* Icons.xcassets in Resources */,
 				7F9CF9AF2B2F73C2005A4833 /* Colors.xcassets in Resources */,
@@ -272,26 +296,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7F9CF9E12B31A3E9005A4833 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}\"/SwiftLint/swiftlint\n";
-		};
-		AA61B15973CE6821C031A592 /* [CP] Check Pods Manifest.lock */ = {
+		7A7399D3470CBC2742DC4BF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,6 +318,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F9CF9E12B31A3E9005A4833 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}\"/SwiftLint/swiftlint\n";
+		};
+		7F9CF9E22B31B6CD005A4833 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT\"/SwiftGen/bin/swiftgen config run --config \"$PROJECT_DIR/$TARGET_NAME/swiftgen.yml\"\n\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -325,6 +368,8 @@
 				7F9CF9CC2B30B159005A4833 /* TouristView.swift in Sources */,
 				7F9CF9D22B317863005A4833 /* ViewModify.swift in Sources */,
 				7F9CF9C32B302B86005A4833 /* ResultOrderViewModel.swift in Sources */,
+				7FBCD3832B31D4A000C0D6B2 /* Strings+Generated.swift in Sources */,
+				7FBCD3822B31D4A000C0D6B2 /* XCAssets+Generated.swift in Sources */,
 				7F9CF9BD2B2F813B005A4833 /* ResultOrderView.swift in Sources */,
 				7F9CF9AD2B2F73C0005A4833 /* ContentView.swift in Sources */,
 				7F9CF9D42B318AE6005A4833 /* ButtonView.swift in Sources */,
@@ -338,12 +383,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FFA9EA12B31CEC80055E253 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		7F9CF9B32B2F73C2005A4833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -407,6 +464,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -460,8 +518,9 @@
 		};
 		7F9CF9B62B2F73C2005A4833 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E963F68C372EE16FE53569A /* Pods-Hotel_test.debug.xcconfig */;
+			baseConfigurationReference = E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -491,8 +550,9 @@
 		};
 		7F9CF9B72B2F73C2005A4833 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 896FE4A5BBE2CC7EECE94AB8 /* Pods-Hotel_test.release.xcconfig */;
+			baseConfigurationReference = 55DB0314DB124131BFFA23E9 /* Pods-Hotel_test.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

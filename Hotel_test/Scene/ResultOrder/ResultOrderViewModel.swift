@@ -16,7 +16,7 @@ protocol ResultOrderProtocol: ObservableObject {
 
 class ResultOrderViewModel: ResultOrderProtocol {
     @Published var imageName: String = "sucessOrder"
-    @Published var orderResult: String = "Ваш заказ принят в работу"
-    @Published var orderComment: String = "Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
-    @Published var buttonName: String = "Супер!"
+    @Published var orderResult: String = L.Order.result
+    @Published var orderComment: String = L.Order.comment
+    @Published var buttonName: String = L.Order.button
 }
