@@ -9,6 +9,7 @@ import SwiftUI
 
 extension Font {
     enum Regular {
+        static var size14: Font { Font.system(size: 14, weight: .regular) }
         static var size16: Font { Font.system(size: 16, weight: .regular) }
     }
     enum Medium {

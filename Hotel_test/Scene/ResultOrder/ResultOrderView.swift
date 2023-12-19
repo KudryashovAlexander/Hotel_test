@@ -48,16 +48,9 @@ struct ResultOrderView: View {
     }
     
     private var button: some View {
-        VStack {
-            Button(viewModel.buttonName) {
-                print("press Button")
-            }
-            .frame(maxWidth: .infinity, maxHeight: Constants.Button.height)
-            .foregroundColor(.white)
-            .background(Color.hBlue)
-            .cornerRadius(Constants.Button.cornerRadius)
+        ButtonView(text: viewModel.buttonName) {
+            print("Press button")
         }
-        .padding(.horizontal, Constants.Button.padding)
     }
     
     private enum Constants {
@@ -68,11 +61,6 @@ struct ResultOrderView: View {
         enum OrderResult {
             static let topPadding: CGFloat = 32
             static let bottomPadding: CGFloat = 20
-        }
-        enum Button {
-            static let height: CGFloat = 48
-            static let cornerRadius: CGFloat = 15
-            static let padding: CGFloat = 16
         }
     }
 }
