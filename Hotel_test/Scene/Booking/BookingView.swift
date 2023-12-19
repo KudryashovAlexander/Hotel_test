@@ -115,7 +115,6 @@ struct BookingView: View {
         }
     }
     
-    
 }
 
 #Preview {

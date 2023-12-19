@@ -32,7 +32,7 @@ struct TouristView: View {
                 Image("touristReverse")
                     .frame(width: 32, height: 32)
                     .onTapGesture {
-                        //isExpanded.toggle()
+                        // isExpanded.toggle()
                     }
             }
             nameTextField
@@ -114,7 +114,6 @@ struct TouristView: View {
 #Preview {
     TouristView(numberTourist: "Первый турист")
 }
-
 
 extension DateFormatter {
     static func date(from string: String) -> Date? {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol ResultOrderProtocol: ObservableObject  {
+protocol ResultOrderProtocol: ObservableObject {
     var imageName: String { get }
-    var orderResult: String  { get }
+    var orderResult: String { get }
     var orderComment: String { get }
     var buttonName : String { get }
 }
