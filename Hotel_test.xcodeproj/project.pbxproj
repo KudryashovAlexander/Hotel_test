@@ -38,6 +38,7 @@
 		7FBCD39B2B34226200C0D6B2 /* ApartmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD39A2B34226200C0D6B2 /* ApartmentsViewModel.swift */; };
 		7FBCD39E2B34228600C0D6B2 /* ApartmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD39D2B34228600C0D6B2 /* ApartmentViewModel.swift */; };
 		7FBCD3A02B34229C00C0D6B2 /* ApartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD39F2B34229C00C0D6B2 /* ApartmentView.swift */; };
+		7FBCD3A22B344E8A00C0D6B2 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3A12B344E8A00C0D6B2 /* NavigationTitle.swift */; };
 		7FFA9E962B31BD550055E253 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E952B31BD550055E253 /* swiftgen.yml */; };
 		7FFA9E9C2B31CD6F0055E253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		7FBCD39A2B34226200C0D6B2 /* ApartmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsViewModel.swift; sourceTree = "<group>"; };
 		7FBCD39D2B34228600C0D6B2 /* ApartmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentViewModel.swift; sourceTree = "<group>"; };
 		7FBCD39F2B34229C00C0D6B2 /* ApartmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentView.swift; sourceTree = "<group>"; };
+		7FBCD3A12B344E8A00C0D6B2 /* NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitle.swift; sourceTree = "<group>"; };
 		7FFA9E952B31BD550055E253 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		7FFA9EA12B31CEC80055E253 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.debug.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				7F9CF9CD2B31758F005A4833 /* TextFieldModify.swift */,
 				7F9CF9D12B317863005A4833 /* ViewModify.swift */,
 				7F9CF9D32B318AE6005A4833 /* ButtonView.swift */,
+				7FBCD3A12B344E8A00C0D6B2 /* NavigationTitle.swift */,
 				7FBCD3862B31FC4E00C0D6B2 /* Foundation_ext..swift */,
 				7FBCD3882B32255A00C0D6B2 /* WrappedLayoutView.swift */,
 			);
@@ -420,6 +423,7 @@
 				7FBCD3912B33504600C0D6B2 /* ApartmentModel.swift in Sources */,
 				7F9CF9DA2B31903F005A4833 /* HotelModel.swift in Sources */,
 				7F9CF9CC2B30B159005A4833 /* TouristView.swift in Sources */,
+				7FBCD3A22B344E8A00C0D6B2 /* NavigationTitle.swift in Sources */,
 				7FBCD3992B34224C00C0D6B2 /* ApartmentsView.swift in Sources */,
 				7F9CF9D22B317863005A4833 /* ViewModify.swift in Sources */,
 				7F9CF9C32B302B86005A4833 /* ResultOrderViewModel.swift in Sources */,

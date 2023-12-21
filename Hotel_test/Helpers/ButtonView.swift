@@ -33,7 +33,6 @@ struct ButtonView: View {
     private enum Constants {
         static let height: CGFloat = 48
         static let cornerRadius: CGFloat = 15
-        static let padding: CGFloat = 16
     }
 }
 

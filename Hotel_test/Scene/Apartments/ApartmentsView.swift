@@ -11,10 +11,7 @@ struct ApartmentsView: View {
     @ObservedObject var viewModel: ApartmentsViewModel
     var body: some View {
         VStack {
-            Text(viewModel.titleName)
-                .navigationTitle(viewModel.titleName)
-                .foregroundColor(.hBlack)
-                .font(.Medium.size18)
+            NavigationTitle(viewModel.titleName)
             ScrollView{
                 apartments
             }

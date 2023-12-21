@@ -16,10 +16,7 @@ struct BookingView: View {
     }
     var body: some View {
         VStack {
-            Text(L.Booking.title)
-                .navigationTitle(L.Booking.title)
-                .foregroundColor(.hBlack)
-                .font(.Medium.size18)
+            NavigationTitle(L.Booking.title)
             ScrollView {
                 VStack(spacing: 8) {
                     hotelName

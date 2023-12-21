@@ -12,10 +12,7 @@ struct HotelView: View {
     
     var body: some View {
         VStack {
-            Text(L.Hotel.title)
-                .navigationTitle(L.Hotel.title)
-                .foregroundColor(.hBlack)
-                .font(.Medium.size18)
+            NavigationTitle(L.Hotel.title)
             ScrollView {
                 hotel
                 aboutHotel
