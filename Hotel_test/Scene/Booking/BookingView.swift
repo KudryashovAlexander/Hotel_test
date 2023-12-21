@@ -9,33 +9,42 @@ import SwiftUI
 
 struct BookingView: View {
     
-    @State private var phone: String = ""
-    @State private var mail: String = ""
+    @ObservedObject private var viewModel: BookingViewModel
     
+    init(viewModel:BookingViewModel = BookingViewModel()) {
+        self.viewModel = viewModel
+    }
     var body: some View {
-        ScrollView {
-            VStack(spacing: 8) {
-                hotelName
-                detail
-                buyer
-                TouristView(numberTourist: L.Booking.Tourist.first)
-                TouristView(numberTourist: L.Booking.Tourist.second)
-                price
+        VStack {
+            Text(L.Booking.title)
+                .navigationTitle(L.Booking.title)
+                .foregroundColor(.hBlack)
+                .font(.Medium.size18)
+            ScrollView {
+                VStack(spacing: 8) {
+                    hotelName
+                    detail
+                    buyer
+                    tourists
+                    price
+                }
             }
+            .background(Color.hLightGrayPhone)
+            button
         }
-        .background(Color.hGray)
+
     }
     
     private var hotelName: some View {
         VStack(alignment: .leading ,spacing:8) {
             HStack {
-                RatingView(rating: 5, score: "Превосходно")
+                RatingView(rating: viewModel.rating, score: viewModel.ratingName)
                 Spacer()
             }
-            Text("Steigenberger Makadi")
+            Text(viewModel.hotelName)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
-            Text("Madinat Makadi, Safaga Road, Makadi Bay, Египет")
+            Text(viewModel.hotelAdress)
                 .font(.Medium.size14)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.hBlue)
@@ -45,13 +54,15 @@ struct BookingView: View {
     
     private var detail: some View {
         VStack(spacing:16) {
-            detailView(name: L.Booking.Detail.departure, detail: "Санкт-Петербург")
-            detailView(name: L.Booking.Detail.countryCity, detail: "Египет, Хургада")
-            detailView(name: L.Booking.Detail.date, detail: "19.09.2023 – 27.09.2023")
-            detailView(name: L.Booking.Detail.numberDays, detail: "7 ночей")
-            detailView(name: L.Booking.Detail.hotel, detail: "Steigenberger Makadi")
-            detailView(name: L.Booking.Detail.apartment, detail: "Стандартный с видом на бассейн или сад")
-            detailView(name: L.Booking.Detail.eating, detail: "Все включено")
+            detailView(name: L.Booking.Detail.departure, detail: viewModel.departure)
+            detailView(name: L.Booking.Detail.countryCity, detail: viewModel.arrivalCountry)
+            detailView(name: L.Booking.Detail.date,
+                       detail: viewModel.tourDateStart + "-" + viewModel.tourDateStop )
+            // TODO: -  Исправить
+            detailView(name: L.Booking.Detail.numberDays, detail: L.numberOfdays(viewModel.numberOfNights))
+            detailView(name: L.Booking.Detail.hotel, detail: viewModel.hotelName)
+            detailView(name: L.Booking.Detail.apartment, detail: viewModel.room)
+            detailView(name: L.Booking.Detail.eating, detail: viewModel.nutrition)
         }
         .modify()
     }
@@ -62,8 +73,8 @@ struct BookingView: View {
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
                 .multilineTextAlignment(.leading)
-            textFieldView(placeholder: L.Booking.Byer.phone, binding: $phone)
-            textFieldView(placeholder: L.Booking.Byer.mail, binding: $mail)
+            textFieldView(placeholder: L.Booking.Byer.phone, binding: $viewModel.buyerPhone)
+            textFieldView(placeholder: L.Booking.Byer.mail, binding: $viewModel.buyerMail)
             Text(L.Booking.Byer.comment)
                 .font(.Regular.size14)
                 .foregroundColor(.hGray)
@@ -71,14 +82,44 @@ struct BookingView: View {
         .modify()
     }
     
+    private var tourists: some View {
+        VStack {
+            TouristView(numberTourist: L.Booking.Tourist.first)
+            TouristView(numberTourist: L.Booking.Tourist.second)
+            HStack {
+                Text(L.Booking.Tourist.add)
+                    .font(.Medium.size22)
+                    .foregroundColor(.hBlack)
+                Spacer()
+                Image("addTourist")
+                    .frame(width: 32, height: 32)
+                    .onTapGesture {
+                        viewModel.addTourist()
+                    }
+                
+            }
+            .modify()
+        }
+    }
+    
     private var price: some View {
         VStack(spacing: 16) {
-            priceView(name: L.Booking.Pay.tour, price: "186 600Р")
-            priceView(name: L.Booking.Pay.fuelСollection, price: "9 300Р")
-            priceView(name: L.Booking.Pay.serviceFee, price: "2 136Р")
-            priceView(name: L.Booking.Pay.paid, price: "198 036Р")
+            priceView(name: L.Booking.Pay.tour, price: viewModel.tourPrice.priceString())
+            priceView(name: L.Booking.Pay.fuelСollection, price: viewModel.fuelCharge.priceString())
+            priceView(name: L.Booking.Pay.serviceFee, price: viewModel.serviceCharge.priceString())
+            priceView(name: L.Booking.Pay.paid, price: viewModel.totalPrice.priceString())
         }
         .modify()
+    }
+    
+    private var button: some View {
+        VStack {
+            Divider()
+            ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
+                print("press button")
+            }
+        }
+        .background(Color.white)
     }
     
     private func detailView(name: String, detail: String) -> some View {

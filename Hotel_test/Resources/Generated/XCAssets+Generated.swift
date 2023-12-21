@@ -36,11 +36,22 @@ public enum A {
     public static let hOrangeAlpha = ColorAsset(name: "hOrangeAlpha")
   }
   public enum Icons {
-    public static let star = ImageAsset(name: "Star")
+    public static let aboutCell = ImageAsset(name: "aboutCell")
     public static let addTourist = ImageAsset(name: "addTourist")
+    public static let included = ImageAsset(name: "included")
+    public static let noIncluded = ImageAsset(name: "noIncluded")
+    public static let star = ImageAsset(name: "star")
     public static let touristReverse = ImageAsset(name: "touristReverse")
+    public static let сonveniences = ImageAsset(name: "сonveniences")
   }
   public enum Images {
+    public static let apartment1 = ImageAsset(name: "apartment1")
+    public static let apartment2 = ImageAsset(name: "apartment2")
+    public static let apartment3 = ImageAsset(name: "apartment3")
+    public static let apartment4 = ImageAsset(name: "apartment4")
+    public static let mockhotel1 = ImageAsset(name: "mockhotel1")
+    public static let mockhotel2 = ImageAsset(name: "mockhotel2")
+    public static let mockhotel3 = ImageAsset(name: "mockhotel3")
     public static let sucessOrder = ImageAsset(name: "sucessOrder")
   }
 }

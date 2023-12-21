@@ -15,6 +15,7 @@ struct ViewModify: ViewModifier {
             .padding(16)
             .background(Color.white)
             .cornerRadius(15)
+            .frame(width: .infinity)
     }
 }
 

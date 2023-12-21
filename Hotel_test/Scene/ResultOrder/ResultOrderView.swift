@@ -11,6 +11,10 @@ struct ResultOrderView: View {
     @StateObject var viewModel: ResultOrderViewModel
     var body: some View {
         VStack {
+            Text(viewModel.titleName)
+                .navigationTitle(viewModel.titleName)
+                .foregroundColor(.hBlack)
+                .font(.Medium.size18)
             VStack {
                 Spacer()
                 image

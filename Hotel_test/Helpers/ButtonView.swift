@@ -22,7 +22,8 @@ struct ButtonView: View {
             Button(text) {
                 action()
             }
-            .frame(maxWidth: .infinity, maxHeight: Constants.height)
+            .frame(maxWidth: .infinity)
+            .frame(height:Constants.height)
             .foregroundColor(.white)
             .background(Color.hBlue)
             .cornerRadius(Constants.cornerRadius)

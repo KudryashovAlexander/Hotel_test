@@ -10,16 +10,11 @@ import SwiftUI
 struct TouristView: View {
     
     var numberTourist: String
-    var isExpanded: Bool = false
-    @State private var name: String = ""
-    @State private var surName: String = ""
-    @State private var dayBirthday: Date?
-    @State private var nationality: String = ""
-    @State private var passport: Int?
-    @State private var passportEndDay: Date?
-    
-    init(numberTourist: String) {
+    @ObservedObject var model: TouristModel
+
+    init(numberTourist: String, model: TouristModel = TouristModel()) {
         self.numberTourist = numberTourist
+        self.model = model
     }
     
     var body: some View {
@@ -29,18 +24,23 @@ struct TouristView: View {
                     .font(.Medium.size22)
                     .foregroundColor(.hBlack)
                 Spacer()
-                Image("touristReverse")
+                Image(model.buttonImage)
                     .frame(width: 32, height: 32)
                     .onTapGesture {
-                        // isExpanded.toggle()
+                        changeVisible()
                     }
             }
-            nameTextField
-            surNameTextField
-            dayBirthdayTextField
-            nationalityTextField
-            passportTextField
-            passportEndDayTextField
+            if model.isExpanded {
+                VStack {
+                    nameTextField
+                    surNameTextField
+                    dayBirthdayTextField
+                    nationalityTextField
+                    passportTextField
+                    passportEndDayTextField
+                }
+            }
+
         }
         .modify()
     }
@@ -51,12 +51,12 @@ struct TouristView: View {
     }
     
     private var nameTextField: some View {
-        TextField(L.Booking.Tourist.name, text: $name)
+        TextField(L.Booking.Tourist.name, text: $model.name)
             .modifyTF()
     }
     
     private var surNameTextField: some View {
-        TextField(L.Booking.Tourist.surName, text: $surName)
+        TextField(L.Booking.Tourist.surName, text: $model.surName)
             .modifyTF()
     }
     
@@ -65,7 +65,7 @@ struct TouristView: View {
                    get: {
                        let dateFormatter = DateFormatter()
                        dateFormatter.dateFormat = "dd.MM.yyyy"
-                       if let dayBirthday = dayBirthday {
+                       if let dayBirthday = model.dayBirthday {
                            return dateFormatter.string(from: dayBirthday)
                        } else {
                            return ""
@@ -73,7 +73,7 @@ struct TouristView: View {
                    },
                    set: {
                        if let date = DateFormatter.date(from: $0) {
-                           dayBirthday = date
+                           model.dayBirthday = date
                        }
                    }
                ))
@@ -81,12 +81,12 @@ struct TouristView: View {
     }
     
     private var nationalityTextField: some View {
-        TextField(L.Booking.Tourist.nationality, text: $nationality)
+        TextField(L.Booking.Tourist.nationality, text: $model.nationality)
             .modifyTF()
     }
     
     private var passportTextField: some View {
-        TextField(L.Booking.Tourist.passport, value:$passport, formatter: NumberFormatter())
+        TextField(L.Booking.Tourist.passport, value:$model.passport, formatter: NumberFormatter())
             .modifyTF()
     }
     
@@ -95,7 +95,7 @@ struct TouristView: View {
                    get: {
                        let dateFormatter = DateFormatter()
                        dateFormatter.dateFormat = "dd.MM.yyyy"
-                       if let passportEndDay = passportEndDay {
+                       if let passportEndDay = model.passportEndDay {
                            return dateFormatter.string(from: passportEndDay)
                        } else {
                            return ""
@@ -103,11 +103,15 @@ struct TouristView: View {
                    },
                    set: {
                        if let date = DateFormatter.date(from: $0) {
-                           passportEndDay = date
+                           model.passportEndDay = date
                        }
                    }
                ))
         .modifyTF()
+    }
+    
+    private func changeVisible() {
+        model.toogle()
     }
 }
 

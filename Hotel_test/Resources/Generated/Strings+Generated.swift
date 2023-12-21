@@ -10,6 +10,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L {
+  /// Plural format key: "%#@days@"
+  public static func numberOfdays(_ p1: Int) -> String {
+    return L.tr("Localizable", "numberOfdays", p1, fallback: "Plural format key: \"%#@days@\"")
+  }
   public enum Apartment {
     /// Выбрать номер
     public static let button = L.tr("Localizable", "apartment.button", fallback: "Выбрать номер")
