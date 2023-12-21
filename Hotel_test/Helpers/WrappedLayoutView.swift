@@ -27,8 +27,8 @@ struct WrappedLayoutView: View {
         
         return ZStack(alignment: .topLeading) {
             if !array.isEmpty {
-                ForEach(self.array, id: \.self) { platform in
-                    self.item(for: platform)
+                ForEach(self.array, id: \.self) { item in
+                    self.item(for: item)
                         .padding([.horizontal, .vertical], 4)
                         .alignmentGuide(.leading, computeValue: { d in
                             if (abs(width - d.width) > g.size.width) {
@@ -36,7 +36,7 @@ struct WrappedLayoutView: View {
                                 height -= d.height
                             }
                             let result = width
-                            if platform == self.array.last! {
+                            if item == self.array.last! {
                                 width = 0
                             } else {
                                 width -= d.width
@@ -45,7 +45,7 @@ struct WrappedLayoutView: View {
                         })
                         .alignmentGuide(.top, computeValue: { d in
                             let result = height
-                            if platform == self.array.last! {
+                            if item == self.array.last! {
                                 height = 0
                             }
                             return result

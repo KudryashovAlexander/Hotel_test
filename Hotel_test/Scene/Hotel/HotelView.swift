@@ -52,24 +52,29 @@ struct HotelView: View {
         }
         .modify()
     }
+    
     private var aboutHotel: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text(L.Hotel.about)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
             WrappedLayoutView(viewModel.peculiarities)
+            
             Text(viewModel.description)
                 .font(.Regular.size16)
             VStack {
-                aboutCell(image: "сonveniences", name: L.Hotel.conveniences)
+                aboutCell(image: A.Icons.сonveniences.swiftUIImage,
+                          name: L.Hotel.conveniences)
                 Divider()
                     .padding(.leading, 34)
                     .padding(.vertical, 2)
-                aboutCell(image: "included", name: L.Hotel.included)
+                aboutCell(image: A.Icons.included.swiftUIImage,
+                          name: L.Hotel.included)
                 Divider()
                     .padding(.leading, 34)
                     .padding(.vertical, 2)
-                aboutCell(image: "noIncluded", name: L.Hotel.noIncluded)
+                aboutCell(image: A.Icons.noIncluded.swiftUIImage,
+                          name: L.Hotel.noIncluded)
             }
             .padding(15)
             .background(Color.hLightGrayPhone)
@@ -82,8 +87,10 @@ struct HotelView: View {
         VStack {
             Divider()
             ButtonView(text: L.Hotel.button) {
+                // TODO: -
                 print("press button")
             }
+            .padding(.horizontal, 16)
         }
         .background(Color.white)
     }
@@ -109,9 +116,9 @@ struct HotelView: View {
         }
     }
     
-    private func aboutCell(image: String, name: String, choose: String = L.Hotel.necessary) -> some View {
+    private func aboutCell(image: Image, name: String, choose: String = L.Hotel.necessary) -> some View {
         HStack(spacing: 12) {
-            Image(image)
+            image
             VStack(alignment:.leading, spacing: 2) {
                 Text(name)
                     .font(.Medium.size16)
@@ -121,7 +128,7 @@ struct HotelView: View {
                     .foregroundColor(.hGray)
             }
             Spacer()
-            Image("aboutCell")
+            A.Icons.aboutCell.swiftUIImage
                 .frame(width: 24, height: 24)
         }
     }

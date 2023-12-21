@@ -34,8 +34,7 @@ class TouristModel: TouristViewModelProtocol {
          nationality: String = "",
          passport: Int? = nil,
          passportEndDay: Date? = nil,
-         isExpanded: Bool = false)
-    {
+         isExpanded: Bool = false) {
         self.name = name
         self.surName = surName
         self.dayBirthday = dayBirthday

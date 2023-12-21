@@ -91,7 +91,7 @@ struct BookingView: View {
                     .font(.Medium.size22)
                     .foregroundColor(.hBlack)
                 Spacer()
-                Image("addTourist")
+                A.Icons.addTourist.swiftUIImage
                     .frame(width: 32, height: 32)
                     .onTapGesture {
                         viewModel.addTourist()
@@ -116,6 +116,7 @@ struct BookingView: View {
         VStack {
             Divider()
             ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
+                // TODO: - 
                 print("press button")
             }
         }

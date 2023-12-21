@@ -15,6 +15,8 @@ public enum L {
     return L.tr("Localizable", "numberOfdays", p1, fallback: "Plural format key: \"%#@days@\"")
   }
   public enum Apartment {
+    /// Подробнее о номере
+    public static let aboutApartment = L.tr("Localizable", "apartment.aboutApartment", fallback: "Подробнее о номере")
     /// Выбрать номер
     public static let button = L.tr("Localizable", "apartment.button", fallback: "Выбрать номер")
   }

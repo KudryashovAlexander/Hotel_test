@@ -11,6 +11,7 @@
 
 //Apartment
 "apartment.button" = "Выбрать номер";
+"apartment.aboutApartment" = "Подробнее о номере";
 
 // Booking
 "booking.title" = "Бронирование";

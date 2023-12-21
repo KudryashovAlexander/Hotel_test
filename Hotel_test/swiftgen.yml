@@ -16,7 +16,6 @@ xcassets:
   inputs:
     - Resources/Images.xcassets
     - Resources/Icons.xcassets
-    - Resources/Colors.xcassets
   outputs:
     - templateName: swift5
       params:

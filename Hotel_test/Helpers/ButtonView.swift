@@ -28,7 +28,6 @@ struct ButtonView: View {
             .background(Color.hBlue)
             .cornerRadius(Constants.cornerRadius)
         }
-        .padding(.horizontal, Constants.padding)
     }
     
     private enum Constants {
