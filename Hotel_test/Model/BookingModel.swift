@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - Booking
+// MARK: - Booking
 struct Booking: Codable {
     let id: Int
     let hotelName, hotelAdress: String

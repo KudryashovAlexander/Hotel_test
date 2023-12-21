@@ -154,6 +154,10 @@ struct BookingView: View {
         }
     }
     
+    private enum Constants {
+       // TODO: -
+    }
+    
 }
 
 #Preview {

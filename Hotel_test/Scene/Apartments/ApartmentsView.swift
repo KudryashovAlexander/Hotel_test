@@ -27,6 +27,10 @@ struct ApartmentsView: View {
             .modify()
         }
     }
+    
+    private enum Constants {
+       // TODO: -
+    }
 }
 
 #Preview {

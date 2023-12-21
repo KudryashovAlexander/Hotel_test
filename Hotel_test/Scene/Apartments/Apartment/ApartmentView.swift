@@ -32,8 +32,7 @@ struct ApartmentView: View {
     }
     
     private var tags: some View {
-        // TODO: -
-        HStack { }
+        TagsView(viewModel.peculiarities)
     }
     
     private var aboutApartment: some View {
@@ -64,6 +63,10 @@ struct ApartmentView: View {
         ButtonView(text: L.Apartment.button) {
             viewModel.checkNumber()
         }
+    }
+    
+    private enum Constants {
+       // TODO: -
     }
     
 }

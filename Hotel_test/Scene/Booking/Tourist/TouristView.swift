@@ -113,6 +113,10 @@ struct TouristView: View {
     private func changeVisible() {
         model.toogle()
     }
+    
+    private enum Constants {
+       // TODO: -
+    }
 }
 
 #Preview {

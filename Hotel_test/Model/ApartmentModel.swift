@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Apartments
 struct Apartments: Codable {
-    let rooms: [Apartment]
+    let apartment: [Apartment]
 }
 
 // MARK: - Apartment

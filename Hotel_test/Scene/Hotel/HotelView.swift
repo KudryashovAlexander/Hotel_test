@@ -30,7 +30,6 @@ struct HotelView: View {
                 RatingView(rating: viewModel.rating, score: viewModel.ratingName)
                 Spacer()
             }
-            
             Text(viewModel.hotelName)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
@@ -51,14 +50,14 @@ struct HotelView: View {
     }
     
     private var aboutHotel: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        LazyVStack(alignment: .leading, spacing: 16) {
             Text(L.Hotel.about)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
-            WrappedLayoutView(viewModel.peculiarities)
-            
+            tag
             Text(viewModel.description)
                 .font(.Regular.size16)
+           
             VStack {
                 aboutCell(image: A.Icons.сonveniences.swiftUIImage,
                           name: L.Hotel.conveniences)
@@ -76,8 +75,13 @@ struct HotelView: View {
             .padding(15)
             .background(Color.hLightGrayPhone)
             .cornerRadius(15)
+            
         }
         .modify()
+    }
+    
+    private var tag: some View {
+        TagsView(viewModel.peculiarities)
     }
     
     private var button: some View {
@@ -128,6 +132,10 @@ struct HotelView: View {
             A.Icons.aboutCell.swiftUIImage
                 .frame(width: 24, height: 24)
         }
+    }
+    
+    private enum Constants {
+       // TODO: - 
     }
     
 }
