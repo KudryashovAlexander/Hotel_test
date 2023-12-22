@@ -51,3 +51,11 @@
 "order.comment" = "Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.";
 "order.button" = "Супер!";
 
+//network
+"network.error.httpStatusCode" = "Что-то пошло не так";
+"network.error.httpStatusCode4xx" = "Ошибка клиента";
+"network.error.httpStatusCode5xx" = "Ошибка сервера";
+"network.error.httpStatusCode429" = "Слишком много запросов. Попробуйте снова позже.";
+"network.error.urlRequestError" = "Что-то пошло не так";
+"network.error.urlSessionError" = "Что-то пошло не так";
+"network.error.parsingError" = "Не удалось обработать ответ сервера";

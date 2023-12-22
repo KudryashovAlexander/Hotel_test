@@ -98,6 +98,24 @@ public enum L {
     /// Отель
     public static let title = L.tr("Localizable", "hotel.title", fallback: "Отель")
   }
+  public enum Network {
+    public enum Error {
+      /// Что-то пошло не так
+      public static let httpStatusCode = L.tr("Localizable", "network.error.httpStatusCode", fallback: "Что-то пошло не так")
+      /// Слишком много запросов. Попробуйте снова позже.
+      public static let httpStatusCode429 = L.tr("Localizable", "network.error.httpStatusCode429", fallback: "Слишком много запросов. Попробуйте снова позже.")
+      /// Ошибка клиента
+      public static let httpStatusCode4xx = L.tr("Localizable", "network.error.httpStatusCode4xx", fallback: "Ошибка клиента")
+      /// Ошибка сервера
+      public static let httpStatusCode5xx = L.tr("Localizable", "network.error.httpStatusCode5xx", fallback: "Ошибка сервера")
+      /// Не удалось обработать ответ сервера
+      public static let parsingError = L.tr("Localizable", "network.error.parsingError", fallback: "Не удалось обработать ответ сервера")
+      /// Что-то пошло не так
+      public static let urlRequestError = L.tr("Localizable", "network.error.urlRequestError", fallback: "Что-то пошло не так")
+      /// Что-то пошло не так
+      public static let urlSessionError = L.tr("Localizable", "network.error.urlSessionError", fallback: "Что-то пошло не так")
+    }
+  }
   public enum Order {
     /// Супер!
     public static let button = L.tr("Localizable", "order.button", fallback: "Супер!")

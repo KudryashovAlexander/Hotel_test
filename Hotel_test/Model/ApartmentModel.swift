@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - Apartments
-struct Apartments: Codable {
-    let apartment: [Apartment]
+struct ApartmentsModel: Decodable {
+    let apartment: [ApartmentModel]
 }
 
 // MARK: - Apartment
-struct Apartment: Codable {
+struct ApartmentModel: Decodable {
     let id: Int
     let name: String
     let price: Int

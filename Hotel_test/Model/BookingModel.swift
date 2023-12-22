@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Booking
-struct Booking: Codable {
+struct BookingModel: Decodable {
     let id: Int
     let hotelName, hotelAdress: String
     let horating: Int
