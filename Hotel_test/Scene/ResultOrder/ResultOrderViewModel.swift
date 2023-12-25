@@ -15,7 +15,7 @@ protocol ResultOrderProtocol: ObservableObject {
     var buttonName : String { get }
 }
 
-class ResultOrderViewModel: ResultOrderProtocol {
+final class ResultOrderViewModel: ResultOrderProtocol {
     @Published var titleName: String = L.Order.title
     @Published var imageName: String = "sucessOrder"
     @Published var orderResult: String = L.Order.result

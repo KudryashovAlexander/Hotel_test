@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct TextFieldModify: ViewModifier {
+    
     func body(content: Content) -> some View {
         content
             .font(.Regular.size16)
-            .padding(.horizontal, 16)
-            .frame(height:52)
+            .padding(.horizontal, Constants.paddingH)
+            .frame(height: Constants.height)
             .background(Color.hLightGrayPhone)
-            .cornerRadius(10)
+            .cornerRadius(Constants.cornerRadius)
     }
+    
+    private enum Constants {
+        static let paddingH: CGFloat = 16
+        static let height: CGFloat = 52
+        static let cornerRadius: CGFloat = 10
+    }
+    
 }
 
 extension TextField {

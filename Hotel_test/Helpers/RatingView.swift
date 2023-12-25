@@ -15,15 +15,22 @@ struct RatingView: View {
     }
     
     var body: some View {
-        HStack(spacing:2) {
+        HStack(spacing:Constants.spacing) {
             Image("star")
             Text(score)
         }
-        .padding(.vertical, 5)
-        .padding(.horizontal, 10)
+        .padding(.vertical, Constants.paddingV)
+        .padding(.horizontal, Constants.paddingH)
         .foregroundColor(.hOrange)
         .background(Color.hOrangeAlpha)
-        .cornerRadius(5)
+        .cornerRadius(Constants.cornerRadius)
+    }
+    
+    private enum Constants {
+        static let paddingV: CGFloat = 5
+        static let paddingH: CGFloat = 10
+        static let cornerRadius: CGFloat = 5
+        static let spacing: CGFloat = 2
     }
     
 }

@@ -32,31 +32,33 @@ struct TagsView: View {
         var height = CGFloat.zero
 
         return ZStack(alignment: .topLeading) {
-            ForEach(self.tags, id: \.self) { tag in
-                self.item(for: tag)
-                    .padding([.horizontal, .vertical], Constants.spacing)
-                    .alignmentGuide(.leading, computeValue: { d in
-                        if (abs(width - d.width) > g.size.width) {
-                            width = 0
-                            height -= d.height
-                        }
-                        let result = width
-                        if tag == self.tags.last! {
-                            width = 0 // last item
-                        } else {
-                            width -= d.width
-                        }
-                        return result
-                    })
-                    .alignmentGuide(.top, computeValue: { d in
-                        let result = height
-                        if tag == self.tags.last! {
-                            height = 0 // last item
-                        }
-                        return result
-                    })
+            if !tags.isEmpty {
+                ForEach(self.tags, id: \.self) { tag in
+                    self.item(for: tag)
+                        .padding([.horizontal, .vertical], Constants.spacing)
+                        .alignmentGuide(.leading, computeValue: { d in
+                            if (abs(width - d.width) > g.size.width) {
+                                width = 0
+                                height -= d.height
+                            }
+                            let result = width
+                            if tag == self.tags.last! {
+                                width = 0
+                            } else {
+                                width -= d.width
+                            }
+                            return result
+                        })
+                        .alignmentGuide(.top, computeValue: { d in
+                            let result = height
+                            if tag == self.tags.last! {
+                                height = 0
+                            }
+                            return result
+                        })
+                }.background(viewHeightReader($totalHeight))
             }
-        }.background(viewHeightReader($totalHeight))
+        }
     }
 
     private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {

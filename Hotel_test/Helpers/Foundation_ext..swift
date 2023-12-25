@@ -8,6 +8,7 @@
 import Foundation
 
 extension Int {
+    
     func priceString() -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale.current
@@ -16,4 +17,5 @@ extension Int {
         let numberString = numberFormatter.string(for: self) ?? String(self)
         return numberString + " ₽"
     }
+    
 }

@@ -23,13 +23,15 @@ struct NetworkClient {
         self.decoder = decoder
     }
     
-    func fetch<T:Decodable>(endPoint: Endpoint, httpMethod: HttpMethod = .get, handler: @escaping(Result<T,Error>) -> Void) {
+    func fetch<T:Decodable>(endPoint: Endpoint,
+                            httpMethod: HttpMethod = .get,
+                            handler: @escaping(Result<T,Error>) -> Void) {
         
         var request = URLRequest(url: endPoint.url!)
         request.httpMethod = httpMethod.rawValue
         
         let task = session.dataTask(with: request) { data, response, error in
-            if let error = error {
+            if error != nil {
                 handler(.failure(NetworkClientError.urlSessionError))
                 return
             }

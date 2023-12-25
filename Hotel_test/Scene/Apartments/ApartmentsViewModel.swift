@@ -12,7 +12,7 @@ protocol ApartmentsViewModelProtocol: ObservableObject {
     var apartmentArray: [ApartmentViewModel] { get }
 }
 
-class ApartmentsViewModel: ApartmentsViewModelProtocol {
+final class ApartmentsViewModel: ApartmentsViewModelProtocol {
     private(set) var titleName: String = "Steigenberger Makadi"
     private(set) var apartmentArray: [ApartmentViewModel] = [ApartmentViewModel(), ApartmentViewModel()]
 }

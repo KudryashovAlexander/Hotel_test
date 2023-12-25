@@ -17,7 +17,7 @@ protocol ApartmentViewModelProtocol: ObservableObject, Hashable {
     func checkNumber()
 }
 
-class ApartmentViewModel: ApartmentViewModelProtocol {
+final class ApartmentViewModel: ApartmentViewModelProtocol {
     static func == (lhs: ApartmentViewModel, rhs: ApartmentViewModel) -> Bool {
         return lhs.id == rhs.id
     }

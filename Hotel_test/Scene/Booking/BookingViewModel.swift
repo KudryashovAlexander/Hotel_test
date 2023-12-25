@@ -28,7 +28,7 @@ protocol BookingViewModelProtocol: ObservableObject {
     func addTourist()
 }
 
-class BookingViewModel: BookingViewModelProtocol {
+final class BookingViewModel: BookingViewModelProtocol {
     var hotelName: String = "Steigenberger Makadi"
     var hotelAdress: String = "Madinat Makadi, Safaga Road, Makadi Bay, Египет"
     var rating: Int = 5

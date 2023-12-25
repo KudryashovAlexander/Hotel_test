@@ -10,12 +10,18 @@ import Foundation
 import SwiftUI
 
 struct ViewModify: ViewModifier {
+    
     func body(content: Content) -> some View {
         content
-            .padding(16)
+            .padding(Constants.padding)
             .background(Color.white)
-            .cornerRadius(15)
+            .cornerRadius(Constants.cornerRadius)
             .frame(width: .infinity)
+    }
+    
+    private enum Constants {
+        static let padding: CGFloat = 16
+        static let cornerRadius: CGFloat = 15
     }
 }
 
