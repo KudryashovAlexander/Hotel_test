@@ -17,7 +17,7 @@ protocol ResultOrderProtocol: ObservableObject {
 
 final class ResultOrderViewModel: ResultOrderProtocol {
     @Published var titleName: String = L.Order.title
-    @Published var imageName: String = "sucessOrder"
+    @Published var imageName: String = A.Images.sucessOrder.name
     @Published var orderResult: String = L.Order.result
     @Published var orderComment: String = L.Order.comment
     @Published var buttonName: String = L.Order.button

@@ -25,6 +25,7 @@ protocol BookingViewModelProtocol: ObservableObject {
     var totalPrice: Int { get }
     var buyerMail: String { get }
     var buyerPhone: String { get }
+    var tourists: [TouristModel] { get }
     func addTourist()
 }
 
@@ -48,9 +49,9 @@ final class BookingViewModel: BookingViewModelProtocol {
     }
     var buyerMail: String = ""
     var buyerPhone: String = ""
-    
+    @Published var tourists: [TouristModel] = [TouristModel(),TouristModel()]
     func addTourist() {
-        //
+        tourists.append(TouristModel())
     }
     
 }

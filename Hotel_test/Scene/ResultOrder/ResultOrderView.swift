@@ -53,6 +53,7 @@ struct ResultOrderView: View {
             // TODO: -
             print("Press button")
         }
+        .padding(.horizontal, Constants.Button.paddingH)
     }
     
     private enum Constants {
@@ -63,6 +64,9 @@ struct ResultOrderView: View {
         enum OrderResult {
             static let topPadding: CGFloat = 32
             static let bottomPadding: CGFloat = 20
+        }
+        enum Button {
+            static let paddingH: CGFloat = 16
         }
     }
 }

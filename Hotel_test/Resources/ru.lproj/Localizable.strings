@@ -30,6 +30,11 @@
 
 "booking.tourist.first" = "Первый турист";
 "booking.tourist.second" = "Второй турист";
+"booking.tourist.third" = "Третий турист";
+"booking.tourist.four" = "Четвертый турист";
+"booking.tourist.five" = "Пятый турист";
+"booking.tourist.six" = "Шестой турист";
+"booking.tourist.default" = "-ой турист";
 "booking.tourist.add" = "Добавить туриста";
 "booking.tourist.name" = "Имя";
 "booking.tourist.surName" = "Фамилия";

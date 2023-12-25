@@ -56,9 +56,9 @@ struct TagsView: View {
                             }
                             return result
                         })
-                }.background(viewHeightReader($totalHeight))
+                }
             }
-        }
+        }.background(viewHeightReader($totalHeight))
     }
 
     private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {

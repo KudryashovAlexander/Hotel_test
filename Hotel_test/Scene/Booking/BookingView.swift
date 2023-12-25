@@ -81,8 +81,9 @@ struct BookingView: View {
     
     private var tourists: some View {
         VStack {
-            TouristView(numberTourist: L.Booking.Tourist.first)
-            TouristView(numberTourist: L.Booking.Tourist.second)
+            ForEach(viewModel.tourists.indices, id: \.self) { tourist in
+                TouristView(number: tourist)
+            }
             HStack {
                 Text(L.Booking.Tourist.add)
                     .font(.Medium.size22)
@@ -91,9 +92,10 @@ struct BookingView: View {
                 A.Icons.addTourist.swiftUIImage
                     .frame(width: 32, height: 32)
                     .onTapGesture {
-                        viewModel.addTourist()
+                        withAnimation(.linear(duration: 0.5)) {
+                            viewModel.addTourist()
+                        }
                     }
-                
             }
             .modify()
         }
@@ -116,6 +118,7 @@ struct BookingView: View {
                 // TODO: - 
                 print("press button")
             }
+            .padding(.horizontal, 16)
         }
         .background(Color.white)
     }

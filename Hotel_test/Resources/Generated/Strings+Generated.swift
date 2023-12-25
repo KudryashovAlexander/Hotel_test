@@ -66,8 +66,14 @@ public enum L {
       public static let add = L.tr("Localizable", "booking.tourist.add", fallback: "Добавить туриста")
       /// Дата рождения
       public static let birthday = L.tr("Localizable", "booking.tourist.birthday", fallback: "Дата рождения")
+      /// -ой турист
+      public static let `default` = L.tr("Localizable", "booking.tourist.default", fallback: "-ой турист")
       /// Первый турист
       public static let first = L.tr("Localizable", "booking.tourist.first", fallback: "Первый турист")
+      /// Пятый турист
+      public static let five = L.tr("Localizable", "booking.tourist.five", fallback: "Пятый турист")
+      /// Четвертый турист
+      public static let four = L.tr("Localizable", "booking.tourist.four", fallback: "Четвертый турист")
       /// Имя
       public static let name = L.tr("Localizable", "booking.tourist.name", fallback: "Имя")
       /// Гражданство
@@ -78,8 +84,12 @@ public enum L {
       public static let passportEndDay = L.tr("Localizable", "booking.tourist.passportEndDay", fallback: "Срок действия загранпаспорта")
       /// Второй турист
       public static let second = L.tr("Localizable", "booking.tourist.second", fallback: "Второй турист")
+      /// Шестой турист
+      public static let six = L.tr("Localizable", "booking.tourist.six", fallback: "Шестой турист")
       /// Фамилия
       public static let surName = L.tr("Localizable", "booking.tourist.surName", fallback: "Фамилия")
+      /// Третий турист
+      public static let third = L.tr("Localizable", "booking.tourist.third", fallback: "Третий турист")
     }
   }
   public enum Hotel {

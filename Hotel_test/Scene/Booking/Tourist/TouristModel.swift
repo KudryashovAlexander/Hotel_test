@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TouristViewModelProtocol: ObservableObject {
+protocol TouristViewModelProtocol: ObservableObject, Identifiable, Hashable {
     var name: String { get }
     var surName: String { get }
     var dayBirthday: Date? { get }
@@ -19,6 +19,10 @@ protocol TouristViewModelProtocol: ObservableObject {
 }
 
 class TouristModel: TouristViewModelProtocol {
+    static func == (lhs: TouristModel, rhs: TouristModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    var id: UUID = UUID()
     var name: String
     var surName: String
     var dayBirthday: Date?
@@ -52,6 +56,10 @@ class TouristModel: TouristViewModelProtocol {
     func toogle() {
         isExpanded.toggle()
         objectWillChange.send()
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
     
 }
