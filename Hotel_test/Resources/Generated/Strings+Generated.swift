@@ -66,8 +66,8 @@ public enum L {
       public static let add = L.tr("Localizable", "booking.tourist.add", fallback: "Добавить туриста")
       /// Дата рождения
       public static let birthday = L.tr("Localizable", "booking.tourist.birthday", fallback: "Дата рождения")
-      /// -ой турист
-      public static let `default` = L.tr("Localizable", "booking.tourist.default", fallback: "-ой турист")
+      /// -й турист
+      public static let `default` = L.tr("Localizable", "booking.tourist.default", fallback: "-й турист")
       /// Первый турист
       public static let first = L.tr("Localizable", "booking.tourist.first", fallback: "Первый турист")
       /// Пятый турист

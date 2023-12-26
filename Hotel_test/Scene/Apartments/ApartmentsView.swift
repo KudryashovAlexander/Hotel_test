@@ -12,7 +12,7 @@ struct ApartmentsView: View {
     var body: some View {
         VStack {
             NavigationTitle(viewModel.titleName)
-            ScrollView{
+            ScrollView {
                 apartments
             }
             .background(Color.hLightGrayPhone)

@@ -6,32 +6,39 @@
 //
 
 import SwiftUI
-/*
-struct PagingView<Content: View>: View {
-    @Binding var index: Int
-    let maxIndex: Int
-    let content: () -> Content
+
+struct PagingView: View {
+    @State var index: Int
+    var array: [String]
+    var maxIndex: Int {
+        !array.isEmpty ? array.count - 1 : 0
+    }
     
     @State private var offset = CGFloat.zero
     @State private var dragging = false
     
-    init(index: Binding<Int>, maxIndex: Int, @ViewBuilder content: @escaping () -> Content) {
-        self._index = Binding<0>
-        self.maxIndex = maxIndex
-        self.content = content
+    init(_ array:  [String]) {
+        self.index = 0
+        self.array = array
     }
     
     var body: some View {
         ZStack(alignment: .bottom) {
             GeometryReader { geometry in
                 ScrollView(.horizontal, showsIndicators: false ) {
-                    HStack(spacing:0) {
-                        self.content()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .clipped()
+                    HStack(spacing:8) {
+                        ForEach(array, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(height:257)
+                                .clipped()
+                                .cornerRadius(15)
+                                .frame(width: geometry.size.width, height: geometry.size.height)
+                                .clipped()
+                        }
                     }
                 }
-                .content.offset(x: self.offset(in: geometry), y:0)
                 .frame(width: geometry.size.width, alignment: .leading)
                 .gesture(
                     DragGesture().onChanged { value in
@@ -50,7 +57,7 @@ struct PagingView<Content: View>: View {
                 )
             }
             .clipped()
-            PageControl(index: $index, maxIndex: maxIndex)
+            //PageControl(index: $index ,maxIndex: maxIndex)
         }
     }
     
@@ -70,49 +77,58 @@ struct PagingView<Content: View>: View {
     }
 }
 
-struct PageControl: View {
-    @Binding var index: Int
-    let maxIndex: Int
-    
-    var body: some View {
-        HStack(spacing:Constants.spacing) {
-            ForEach(0...maxIndex, id: \.self) { index in
-               Circle()
-                    .fill(circleColor(index: index))
-                    .frame(width: Constants.radius, height: Constants.radius)
-            }
-        }
-        .background(Color.white)
-        .padding(.horizontal, Constants.paddingH)
-        .padding(.vertical, Constants.paddingV)
-    }
-    
-    private func circleColor(index: Int) -> Color {
-        let difference = abs(index - self.index)
-        if difference < 4 {
-            return Color.black.opacity(Constants.opacity[difference])
-        } else {
-            return Color.black.opacity(Constants.opacity.last!)
-        }
-    }
-    
-    private enum Constants {
-        static let spacing: CGFloat = 5
-        static let radius: CGFloat = 7
-        static let paddingH: CGFloat = 10
-        static let paddingV: CGFloat = 5
-        static let opacity: [Double] = [1, 0.22, 0.17, 0.10, 0.05]
-    }
-}
+//struct PageControl: View {
+//    @Binding var index: Int
+//    let maxIndex: Int
+//    
+//    init(index: Int,maxIndex: Int) {
+//        self.index = index
+//        self.maxIndex = maxIndex
+//    }
+//    
+//    var body: some View {
+//        HStack(spacing:Constants.spacing) {
+//            ForEach(0...maxIndex, id: \.self) { index in
+//               Circle()
+//                    .fill(circleColor(index: index))
+//                    .frame(width: Constants.radius, height: Constants.radius)
+//            }
+//        }
+//        .background(Color.white)
+//        .padding(.horizontal, Constants.paddingH)
+//        .padding(.vertical, Constants.paddingV)
+//    }
+//    
+//    private func circleColor(index: Int) -> Color {
+//        let difference = abs(index - self.index)
+//        if difference < 4 {
+//            return Color.black.opacity(Constants.opacity[difference])
+//        } else {
+//            return Color.black.opacity(Constants.opacity.last!)
+//        }
+//    }
+//    
+//    private enum Constants {
+//        static let spacing: CGFloat = 5
+//        static let radius: CGFloat = 7
+//        static let paddingH: CGFloat = 10
+//        static let paddingV: CGFloat = 5
+//        static let opacity: [Double] = [1, 0.22, 0.17, 0.10, 0.05]
+//    }
+//}
 
-#Preview {
-    PagingView(index: $index.animation(), maxIndex: images.count - 1) {
-                    ForEach(self.images, id: \.self) { imageName in
-                        Image(imageName)
-                            .resizable()
-                            .scaledToFill()
-                    }
-                }
-}
+struct PagingView_Previews: PreviewProvider {
+    
+    @State var index = 0
+    var images = [A.Images.mockhotel1.name, A.Images.mockhotel2.name, A.Images.mockhotel3.name]
+    
+    static var previews: some View {
+        VStack(spacing: 20) {
+            PagingView([A.Images.mockhotel1.name, A.Images.mockhotel2.name, A.Images.mockhotel3.name])
+            .aspectRatio(4/3, contentMode: .fit)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
 
-*/
+        }
+    }
+
+}

@@ -46,6 +46,7 @@
 		7FBCD3AD2B34A71600C0D6B2 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3AC2B34A71600C0D6B2 /* PagingView.swift */; };
 		7FBCD3AF2B356B3F00C0D6B2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3AE2B356B3F00C0D6B2 /* Endpoint.swift */; };
 		7FBCD3B32B35776700C0D6B2 /* NetworkClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3B22B35776700C0D6B2 /* NetworkClientError.swift */; };
+		7FBCD3B72B39E92B00C0D6B2 /* PageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCD3B62B39E92B00C0D6B2 /* PageViews.swift */; };
 		7FFA9E962B31BD550055E253 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E952B31BD550055E253 /* swiftgen.yml */; };
 		7FFA9E9C2B31CD6F0055E253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		7FBCD3AC2B34A71600C0D6B2 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		7FBCD3AE2B356B3F00C0D6B2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7FBCD3B22B35776700C0D6B2 /* NetworkClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientError.swift; sourceTree = "<group>"; };
+		7FBCD3B62B39E92B00C0D6B2 /* PageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViews.swift; sourceTree = "<group>"; };
 		7FFA9E952B31BD550055E253 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		7FFA9EA12B31CEC80055E253 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.debug.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				7FBCD3862B31FC4E00C0D6B2 /* Foundation_ext..swift */,
 				7FBCD3882B32255A00C0D6B2 /* TagsView.swift */,
 				7FBCD3AC2B34A71600C0D6B2 /* PagingView.swift */,
+				7FBCD3B62B39E92B00C0D6B2 /* PageViews.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				7F9CF9C62B3054AA005A4833 /* BookingView.swift in Sources */,
 				7FBCD3852B31F8F000C0D6B2 /* HotelView.swift in Sources */,
 				7FBCD3A92B34538400C0D6B2 /* ApartmentService.swift in Sources */,
+				7FBCD3B72B39E92B00C0D6B2 /* PageViews.swift in Sources */,
 				7FBCD3A72B34537000C0D6B2 /* HotelService.swift in Sources */,
 				7FBCD3912B33504600C0D6B2 /* ApartmentModel.swift in Sources */,
 				7F9CF9DA2B31903F005A4833 /* HotelModel.swift in Sources */,

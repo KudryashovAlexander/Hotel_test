@@ -39,6 +39,7 @@ public enum A {
     public static let mockhotel1 = ImageAsset(name: "mockhotel1")
     public static let mockhotel2 = ImageAsset(name: "mockhotel2")
     public static let mockhotel3 = ImageAsset(name: "mockhotel3")
+    public static let noImage = ImageAsset(name: "noImage")
     public static let sucessOrder = ImageAsset(name: "sucessOrder")
   }
 }
