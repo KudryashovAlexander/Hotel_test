@@ -24,16 +24,7 @@ struct ResultOrderView: View {
             Divider()
             button
         }
-        .navigationTitle(viewModel.titleName)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Image(.backNavButton)
-                    .onTapGesture {
-                        coordinator.pop()
-                    }
-            }
-        }
+        .modifyNavigation(title: viewModel.titleName)
     }
     
     private var image: some View {

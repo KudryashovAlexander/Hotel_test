@@ -29,16 +29,7 @@ struct BookingView: View {
             .background(Color.hLightGrayPhone)
             button
         }
-        .navigationTitle(L.Booking.title)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Image(.backNavButton)
-                    .onTapGesture {
-                        coordinator.pop()
-                    }
-            }
-        }
+        .modifyNavigation(title: L.Booking.title)
     }
     
     private var hotelName: some View {

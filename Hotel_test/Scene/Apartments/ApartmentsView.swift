@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ApartmentsView: View {
-    @EnvironmentObject private var coordinator: Coordinator
     @ObservedObject var viewModel: ApartmentsViewModel
     var body: some View {
         VStack {
@@ -17,16 +16,7 @@ struct ApartmentsView: View {
             }
             .background(Color.hLightGrayPhone)
         }
-        .navigationTitle(viewModel.titleName)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Image(.backNavButton)
-                    .onTapGesture {
-                        coordinator.pop()
-                    }
-            }
-        }
+        .modifyNavigation(title: viewModel.titleName)
     }
     
     var apartments: some View {
