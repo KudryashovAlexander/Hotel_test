@@ -16,7 +16,6 @@ struct ViewModify: ViewModifier {
             .padding(Constants.padding)
             .background(Color.white)
             .cornerRadius(Constants.cornerRadius)
-            .frame(width: .infinity)
     }
     
     private enum Constants {

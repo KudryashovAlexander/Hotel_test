@@ -19,7 +19,6 @@ struct HotelView: View {
                 hotel
                 aboutHotel
             }
-            .frame(width:.infinity)
             .background(.hLightGrayPhone)
             button
         }
@@ -27,7 +26,7 @@ struct HotelView: View {
     }
     
     private var hotel: some View {
-        VStack(alignment:.leading, spacing: 8) {
+        VStack(alignment:.leading, spacing: Constants.Hotel.spacing) {
             imageScroll
             HStack {
                 RatingView(rating: viewModel.rating, score: viewModel.ratingName)
@@ -53,7 +52,7 @@ struct HotelView: View {
     }
     
     private var aboutHotel: some View {
-        LazyVStack(alignment: .leading, spacing: 16) {
+        LazyVStack(alignment: .leading, spacing: Constants.AbouHotel.spacing) {
             Text(L.Hotel.about)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
@@ -64,23 +63,24 @@ struct HotelView: View {
             VStack {
                 aboutCell(image: A.Icons.сonveniences.swiftUIImage,
                           name: L.Hotel.conveniences)
-                Divider()
-                    .padding(.leading, 34)
-                    .padding(.vertical, 2)
+                divider
                 aboutCell(image: A.Icons.included.swiftUIImage,
                           name: L.Hotel.included)
-                Divider()
-                    .padding(.leading, 34)
-                    .padding(.vertical, 2)
+                divider
                 aboutCell(image: A.Icons.noIncluded.swiftUIImage,
                           name: L.Hotel.noIncluded)
             }
-            .padding(15)
+            .padding(Constants.AbouHotel.padding)
             .background(Color.hLightGrayPhone)
-            .cornerRadius(15)
-            
+            .cornerRadius(Constants.AbouHotel.cornerRadius)
         }
         .modify()
+    }
+    
+    private var divider: some View {
+        Divider()
+            .padding(.leading, Constants.AbouHotel.Divider.paddingL)
+            .padding(.vertical, Constants.AbouHotel.Divider.paddingV)
     }
     
     private var tag: some View {
@@ -93,7 +93,7 @@ struct HotelView: View {
             ButtonView(text: L.Hotel.button) {
                 coordinator.push(.apartment)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, Constants.Button.paddingH)
         }
         .background(Color.white)
     }
@@ -104,14 +104,15 @@ struct HotelView: View {
     
     private var aboutdetail: some View {
         VStack {
-            
+            //TODO: -
         }
     }
     
+    // MARK: - Methods
     private func aboutCell(image: Image, name: String, choose: String = L.Hotel.necessary) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Constants.AbouHotel.Cell.spacingH) {
             image
-            VStack(alignment:.leading, spacing: 2) {
+            VStack(alignment:.leading, spacing: Constants.AbouHotel.Cell.spacingV) {
                 Text(name)
                     .font(.Medium.size16)
                     .foregroundColor(.hBlack)
@@ -121,14 +122,34 @@ struct HotelView: View {
             }
             Spacer()
             A.Icons.aboutCell.swiftUIImage
-                .frame(width: 24, height: 24)
+                .frame(width: Constants.AbouHotel.Cell.imageWH,
+                       height: Constants.AbouHotel.Cell.imageWH)
         }
     }
     
+    // MARK: - Constants
     private enum Constants {
-       // TODO: - 
+        enum Hotel {
+            static let spacing: CGFloat = 8
+        }
+        enum AbouHotel {
+            static let spacing: CGFloat = 16
+            static let padding: CGFloat = 15
+            static let cornerRadius: CGFloat = 15
+            enum Divider {
+                static let paddingL: CGFloat = 34
+                static let paddingV: CGFloat = 2
+            }
+            enum Cell {
+                static let spacingH: CGFloat = 12
+                static let spacingV: CGFloat = 2
+                static let imageWH: CGFloat = 24
+            }
+        }
+        enum Button {
+            static let paddingH: CGFloat = 16
+        }
     }
-    
 }
 
 #Preview {

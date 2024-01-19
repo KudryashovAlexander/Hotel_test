@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct TouristView: View {
-    static func == (lhs: TouristView, rhs: TouristView) -> Bool {
-        lhs.number == rhs.number
-    }
+    
     var number: Int
     var numberString: String {
         return numberTouristString(number)
@@ -105,6 +103,7 @@ struct TouristView: View {
             .modifyTF()
     }
     
+
     private var passportEndDayTextField: some View {
         TextField(L.Booking.Tourist.passportEndDay, text: Binding(
                    get: {
@@ -125,6 +124,7 @@ struct TouristView: View {
         .modifyTF()
     }
     
+    // MARK: - Methods
     private func changeVisible() {
 
         withAnimation(.linear(duration: 0.5)) {
@@ -155,7 +155,13 @@ struct TouristView: View {
             return String(number + 1) + L.Booking.Tourist.default
         }
     }
+
+    // MARK: - Hashable
+    static func == (lhs: TouristView, rhs: TouristView) -> Bool {
+        lhs.number == rhs.number
+    }
     
+    // MARK: - Constants
     private enum Constants {
         static let rotation: Double = 180
         enum Rectangle {

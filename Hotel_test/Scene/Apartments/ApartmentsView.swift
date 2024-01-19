@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ApartmentsView: View {
+    
     @ObservedObject var viewModel: ApartmentsViewModel
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -20,7 +22,7 @@ struct ApartmentsView: View {
     }
     
     var apartments: some View {
-        VStack(spacing:8) {
+        VStack(spacing:Constants.spacingV) {
             ForEach(viewModel.apartmentArray, id: \.self) { apartment in
                 ApartmentView(viewModel: apartment)
             }
@@ -28,9 +30,11 @@ struct ApartmentsView: View {
         }
     }
     
+    // MARK: - Constants
     private enum Constants {
-       // TODO: -
+        static let spacingV: CGFloat = 8
     }
+    
 }
 
 #Preview {

@@ -58,6 +58,7 @@ struct ResultOrderView: View {
         .padding(.horizontal, Constants.Button.paddingH)
     }
     
+    // MARK: - Constants
     private enum Constants {
         static let padding: CGFloat = 23
         enum Circle {

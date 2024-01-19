@@ -15,10 +15,11 @@ struct BookingView: View {
     init(viewModel:BookingViewModel = BookingViewModel()) {
         self.viewModel = viewModel
     }
+    
     var body: some View {
         VStack {
             ScrollView {
-                VStack(spacing: 8) {
+                VStack(spacing: Constants.spacingV) {
                     hotelName
                     detail
                     buyer
@@ -33,7 +34,7 @@ struct BookingView: View {
     }
     
     private var hotelName: some View {
-        VStack(alignment: .leading ,spacing:8) {
+        VStack(alignment: .leading ,spacing:Constants.HotelName.spacingV) {
             HStack {
                 RatingView(rating: viewModel.rating, score: viewModel.ratingName)
                 Spacer()
@@ -50,16 +51,22 @@ struct BookingView: View {
     }
     
     private var detail: some View {
-        VStack(spacing:16) {
-            detailView(name: L.Booking.Detail.departure, detail: viewModel.departure)
-            detailView(name: L.Booking.Detail.countryCity, detail: viewModel.arrivalCountry)
+        VStack(spacing:Constants.HotelName.spacingV) {
+            detailView(name: L.Booking.Detail.departure,
+                       detail: viewModel.departure)
+            detailView(name: L.Booking.Detail.countryCity,
+                       detail: viewModel.arrivalCountry)
             detailView(name: L.Booking.Detail.date,
                        detail: viewModel.tourDateStart + "-" + viewModel.tourDateStop )
             // TODO: -  Исправить
-            detailView(name: L.Booking.Detail.numberDays, detail: L.numberOfdays(viewModel.numberOfNights))
-            detailView(name: L.Booking.Detail.hotel, detail: viewModel.hotelName)
-            detailView(name: L.Booking.Detail.apartment, detail: viewModel.room)
-            detailView(name: L.Booking.Detail.eating, detail: viewModel.nutrition)
+            detailView(name: L.Booking.Detail.numberDays,
+                       detail: L.numberOfdays(viewModel.numberOfNights))
+            detailView(name: L.Booking.Detail.hotel,
+                       detail: viewModel.hotelName)
+            detailView(name: L.Booking.Detail.apartment,
+                       detail: viewModel.room)
+            detailView(name: L.Booking.Detail.eating,
+                       detail: viewModel.nutrition)
         }
         .modify()
     }
@@ -70,8 +77,10 @@ struct BookingView: View {
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
                 .multilineTextAlignment(.leading)
-            textFieldView(placeholder: L.Booking.Byer.phone, binding: $viewModel.buyerPhone)
-            textFieldView(placeholder: L.Booking.Byer.mail, binding: $viewModel.buyerMail)
+            textFieldView(placeholder: L.Booking.Byer.phone,
+                          binding: $viewModel.buyerPhone)
+            textFieldView(placeholder: L.Booking.Byer.mail,
+                          binding: $viewModel.buyerMail)
             Text(L.Booking.Byer.comment)
                 .font(.Regular.size14)
                 .foregroundColor(.hGray)
@@ -90,9 +99,10 @@ struct BookingView: View {
                     .foregroundColor(.hBlack)
                 Spacer()
                 A.Icons.addTourist.swiftUIImage
-                    .frame(width: 32, height: 32)
+                    .frame(width: Constants.Tourists.Image.widthHeight,
+                           height: Constants.Tourists.Image.widthHeight)
                     .onTapGesture {
-                        withAnimation(.linear(duration: 0.5)) {
+                        withAnimation(.linear(duration: Constants.Tourists.Image.duration)) {
                             viewModel.addTourist()
                         }
                     }
@@ -102,7 +112,7 @@ struct BookingView: View {
     }
     
     private var price: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: Constants.Price.spacingV) {
             priceView(name: L.Booking.Pay.tour, price: viewModel.tourPrice.priceString())
             priceView(name: L.Booking.Pay.fuelСollection, price: viewModel.fuelCharge.priceString())
             priceView(name: L.Booking.Pay.serviceFee, price: viewModel.serviceCharge.priceString())
@@ -117,11 +127,12 @@ struct BookingView: View {
             ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
                 coordinator.push(.resultOrder)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, Constants.Button.paddingH)
         }
         .background(Color.white)
     }
     
+    // MARK: - Methods
     private func detailView(name: String, detail: String) -> some View {
         HStack(alignment:.top) {
             Text(name)
@@ -131,17 +142,19 @@ struct BookingView: View {
             Text(detail)
                 .font(.Regular.size16)
                 .foregroundColor(.hBlack)
-                .frame(idealWidth: 203, maxWidth: 203, alignment: .leading)
+                .frame(idealWidth: Constants.DetailView.width,
+                       maxWidth: Constants.DetailView.width,
+                       alignment: .leading)
         }
     }
     
     private func textFieldView(placeholder: String, binding: Binding<String>) -> some View {
         TextField(placeholder, text: binding)
             .font(.Regular.size16)
-            .padding(.horizontal, 16)
-            .frame(height:52)
+            .padding(.horizontal, Constants.TextField.paddingH)
+            .frame(height: Constants.TextField.height)
             .background(Color.hLightGrayPhone)
-            .cornerRadius(10)
+            .cornerRadius(Constants.TextField.cornerRadius)
     }
     
     private func priceView(name: String, price: String) -> some View {
@@ -155,9 +168,35 @@ struct BookingView: View {
                 .foregroundColor(.hBlack)
         }
     }
-    
+    // MARK: - Constants
     private enum Constants {
-       // TODO: -
+        static let spacingV: CGFloat = 8
+        enum HotelName {
+            static let spacingV: CGFloat = 8
+        }
+        enum Detail {
+            static let spacingV: CGFloat = 16
+        }
+        enum Tourists {
+            enum Image {
+                static let widthHeight: CGFloat = 32
+                static let duration: TimeInterval = 0.5
+            }
+        }
+        enum Price {
+            static let spacingV: CGFloat = 16
+        }
+        enum Button {
+            static let paddingH: CGFloat = 16
+        }
+        enum DetailView {
+            static let width: CGFloat = 203
+        }
+        enum TextField {
+            static let paddingH: CGFloat = 16
+            static let height: CGFloat = 53
+            static let cornerRadius: CGFloat = 10
+        }
     }
     
 }

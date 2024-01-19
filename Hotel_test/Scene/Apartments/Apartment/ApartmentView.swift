@@ -13,7 +13,7 @@ struct ApartmentView: View {
     @ObservedObject var viewModel: ApartmentViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: Constants.spacing) {
             images
             name
             tags
@@ -38,20 +38,20 @@ struct ApartmentView: View {
     }
     
     private var aboutApartment: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: Constants.AboutApartment.spacingH) {
             Text(L.Apartment.aboutApartment)
                 .font(.Medium.size16)
             A.Icons.aboutCell.swiftUIImage
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
+        .padding(.horizontal, Constants.AboutApartment.paddingH)
+        .padding(.vertical, Constants.AboutApartment.paddingV)
         .foregroundColor(.hBlue)
         .background(Color.hBlueAlpha)
-        .cornerRadius(5)
+        .cornerRadius(Constants.AboutApartment.cornerRadius)
     }
     
     private var price: some View {
-        HStack(alignment: .bottom, spacing: 8) {
+        HStack(alignment: .bottom, spacing: Constants.Price.spacingH) {
             Text(viewModel.price.priceString())
                 .font(.SemiBold.size30)
                 .foregroundColor(.hBlack)
@@ -68,8 +68,18 @@ struct ApartmentView: View {
         }
     }
     
+    // MARK: - Constants
     private enum Constants {
-       // TODO: -
+        static let spacing: CGFloat = 8
+        enum AboutApartment{
+            static let spacingH: CGFloat = 2
+            static let paddingH: CGFloat = 10
+            static let paddingV: CGFloat = 5
+            static let cornerRadius: CGFloat = 5
+        }
+        enum Price{
+            static let spacingH: CGFloat = 8
+        }
     }
     
 }
