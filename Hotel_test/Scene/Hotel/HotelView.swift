@@ -15,15 +15,15 @@ struct HotelView: View {
     
     var body: some View {
         VStack {
-            NavigationTitle(L.Hotel.title)
             ScrollView {
                 hotel
                 aboutHotel
             }
             .frame(width:.infinity)
-            .background(Color.hLightGrayPhone)
+            .background(.hLightGrayPhone)
             button
         }
+        .navigationTitle(L.Hotel.title)        
     }
     
     private var hotel: some View {

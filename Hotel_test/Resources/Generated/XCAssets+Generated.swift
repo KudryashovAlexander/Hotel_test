@@ -25,6 +25,7 @@ public enum A {
   public enum Icons {
     public static let aboutCell = ImageAsset(name: "aboutCell")
     public static let addTourist = ImageAsset(name: "addTourist")
+    public static let backNavButton = ImageAsset(name: "backNavButton")
     public static let included = ImageAsset(name: "included")
     public static let noIncluded = ImageAsset(name: "noIncluded")
     public static let star = ImageAsset(name: "star")

@@ -17,7 +17,6 @@ struct BookingView: View {
     }
     var body: some View {
         VStack {
-            NavigationTitle(L.Booking.title)
             ScrollView {
                 VStack(spacing: 8) {
                     hotelName
@@ -29,6 +28,16 @@ struct BookingView: View {
             }
             .background(Color.hLightGrayPhone)
             button
+        }
+        .navigationTitle(L.Booking.title)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Image(.backNavButton)
+                    .onTapGesture {
+                        coordinator.pop()
+                    }
+            }
         }
     }
     

@@ -14,7 +14,6 @@ struct ResultOrderView: View {
     
     var body: some View {
         VStack {
-            NavigationTitle(viewModel.titleName)
             VStack {
                 Spacer()
                 image
@@ -24,6 +23,16 @@ struct ResultOrderView: View {
             .padding(.horizontal, Constants.padding)
             Divider()
             button
+        }
+        .navigationTitle(viewModel.titleName)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Image(.backNavButton)
+                    .onTapGesture {
+                        coordinator.pop()
+                    }
+            }
         }
     }
     

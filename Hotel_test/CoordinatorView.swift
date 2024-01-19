@@ -17,6 +17,7 @@ struct CoordinatorView: View {
                 .navigationDestination(for: Page.self) { page in
                     coordinator.build(page: page)
                 }
+                .navigationBarTitleDisplayMode(.inline)
         }
         .environmentObject(coordinator)
     }
