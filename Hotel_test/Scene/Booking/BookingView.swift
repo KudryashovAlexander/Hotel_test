@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookingView: View {
     
+    @EnvironmentObject private var coordinator: Coordinator
     @ObservedObject private var viewModel: BookingViewModel
     
     init(viewModel:BookingViewModel = BookingViewModel()) {
@@ -29,7 +30,6 @@ struct BookingView: View {
             .background(Color.hLightGrayPhone)
             button
         }
-
     }
     
     private var hotelName: some View {
@@ -115,8 +115,7 @@ struct BookingView: View {
         VStack {
             Divider()
             ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
-                // TODO: - 
-                print("press button")
+                coordinator.push(.resultOrder)
             }
             .padding(.horizontal, 16)
         }

@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ApartmentView: View {
+    
+    @EnvironmentObject private var coordinator: Coordinator
     @ObservedObject var viewModel: ApartmentViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             images
@@ -21,8 +24,7 @@ struct ApartmentView: View {
     }
     
     private var images: some View {
-        // TODO: -
-        HStack { }
+        PageViews(contentName: viewModel.imageUrls)
     }
     
     private var name: some View {
@@ -62,6 +64,7 @@ struct ApartmentView: View {
     private var button: some View {
         ButtonView(text: L.Apartment.button) {
             viewModel.checkNumber()
+            coordinator.push(.booking)
         }
     }
     

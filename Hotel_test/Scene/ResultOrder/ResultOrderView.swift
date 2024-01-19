@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ResultOrderView: View {
+    
+    @EnvironmentObject private var coordinator: Coordinator
     @StateObject var viewModel: ResultOrderViewModel
+    
     var body: some View {
         VStack {
             NavigationTitle(viewModel.titleName)
@@ -50,8 +53,7 @@ struct ResultOrderView: View {
     
     private var button: some View {
         ButtonView(text: viewModel.buttonName) {
-            // TODO: -
-            print("Press button")
+            coordinator.popToRoot()
         }
         .padding(.horizontal, Constants.Button.paddingH)
     }

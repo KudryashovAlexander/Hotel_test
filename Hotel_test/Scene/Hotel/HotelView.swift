@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HotelView: View {
+    
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var viewModel: HotelViewModel
     
     var body: some View {
@@ -88,8 +91,7 @@ struct HotelView: View {
         VStack {
             Divider()
             ButtonView(text: L.Hotel.button) {
-                // TODO: -
-                print("press button")
+                coordinator.push(.apartment)
             }
             .padding(.horizontal, 16)
         }
@@ -97,18 +99,7 @@ struct HotelView: View {
     }
     
     private var imageScroll: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing:8) {
-                ForEach(viewModel.mockImages, id: \.self) { imageName in
-                    Image(imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height:257)
-                        .clipped()
-                        .cornerRadius(15)
-                }
-            }
-        }
+        PageViews(contentName: viewModel.mockImages)
     }
     
     private var aboutdetail: some View {
