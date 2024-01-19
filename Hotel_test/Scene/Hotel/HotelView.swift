@@ -91,7 +91,9 @@ struct HotelView: View {
         VStack {
             Divider()
             ButtonView(text: L.Hotel.button) {
-                coordinator.push(.apartment)
+                viewModel.pressButton {
+                    coordinator.push(.apartment)
+                }
             }
             .padding(.horizontal, Constants.Button.paddingH)
         }

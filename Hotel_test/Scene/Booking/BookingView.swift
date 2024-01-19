@@ -125,7 +125,9 @@ struct BookingView: View {
         VStack {
             Divider()
             ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
-                coordinator.push(.resultOrder)
+                viewModel.pressButton {
+                    coordinator.push(.resultOrder)
+                }
             }
             .padding(.horizontal, Constants.Button.paddingH)
         }

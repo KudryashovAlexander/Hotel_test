@@ -14,14 +14,11 @@ protocol ApartmentViewModelProtocol: ObservableObject, Hashable {
     var pricePer: String { get }
     var peculiarities: [String] { get }
     var imageUrls: [String] { get }
-    func checkNumber()
+    func pressButton(completion: () -> Void)
 }
 
 final class ApartmentViewModel: ApartmentViewModelProtocol {
-    static func == (lhs: ApartmentViewModel, rhs: ApartmentViewModel) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
+
     private(set) var id: Int = 0
     @Published private(set) var name: String = "Стандартный номер с видом на бассейн"
     @Published private(set) var price: Int = 186600
@@ -36,8 +33,16 @@ final class ApartmentViewModel: ApartmentViewModelProtocol {
                                                        "apartment2",
                                                        "apartment3",
                                                        "apartment4"]
-    func checkNumber() {
+    
+    // MARK: - Methods
+    func pressButton(completion: () -> Void) {
         // TODO: -
+        completion()
+    }
+
+    // MARK: - Hashable
+    static func == (lhs: ApartmentViewModel, rhs: ApartmentViewModel) -> Bool {
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {

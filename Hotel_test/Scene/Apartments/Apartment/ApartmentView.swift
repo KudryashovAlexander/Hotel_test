@@ -63,21 +63,22 @@ struct ApartmentView: View {
     
     private var button: some View {
         ButtonView(text: L.Apartment.button) {
-            viewModel.checkNumber()
-            coordinator.push(.booking)
+            viewModel.pressButton {
+                coordinator.push(.booking)
+            }
         }
     }
     
     // MARK: - Constants
     private enum Constants {
         static let spacing: CGFloat = 8
-        enum AboutApartment{
+        enum AboutApartment {
             static let spacingH: CGFloat = 2
             static let paddingH: CGFloat = 10
             static let paddingV: CGFloat = 5
             static let cornerRadius: CGFloat = 5
         }
-        enum Price{
+        enum Price {
             static let spacingH: CGFloat = 8
         }
     }

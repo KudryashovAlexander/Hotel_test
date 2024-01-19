@@ -5,7 +5,7 @@
 //  Created by Александр Кудряшов on 19.12.2023.
 //
 
-import Foundation
+import SwiftUI
 
 protocol HotelViewModelProtocol: ObservableObject {
     var hotelName: String { get }
@@ -17,6 +17,7 @@ protocol HotelViewModelProtocol: ObservableObject {
     var imageURLs: [URL] { get }
     var description: String { get }
     var peculiarities: [String] { get }
+    func pressButton(_ completion: () -> Void)
 }
 
 final class HotelViewModel: HotelViewModelProtocol {
@@ -33,8 +34,14 @@ final class HotelViewModel: HotelViewModelProtocol {
     private(set) var mockImages = ["mockhotel1","mockhotel2","mockhotel3"]
     
     private var hotelService = HotelService()
+    
     init() {
         hotelService.fetchHotel()
+    }
+    
+    func pressButton(_ completion: () -> Void) {
+        //
+        completion()
     }
     
     func updateData() {

@@ -13,6 +13,7 @@ protocol ResultOrderProtocol: ObservableObject {
     var orderResult: String { get }
     var orderComment: String { get }
     var buttonName : String { get }
+    func pressButton(_ completion: () -> Void)
 }
 
 final class ResultOrderViewModel: ResultOrderProtocol {
@@ -21,4 +22,8 @@ final class ResultOrderViewModel: ResultOrderProtocol {
     @Published var orderResult: String = L.Order.result
     @Published var orderComment: String = L.Order.comment
     @Published var buttonName: String = L.Order.button
+    func pressButton(_ completion: () -> Void) {
+        completion()
+    }
+
 }

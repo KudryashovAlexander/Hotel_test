@@ -53,7 +53,9 @@ struct ResultOrderView: View {
     
     private var button: some View {
         ButtonView(text: viewModel.buttonName) {
-            coordinator.popToRoot()
+            viewModel.pressButton {
+                coordinator.popToRoot()
+            }
         }
         .padding(.horizontal, Constants.Button.paddingH)
     }
