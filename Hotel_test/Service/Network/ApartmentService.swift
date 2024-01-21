@@ -5,25 +5,29 @@
 //  Created by Александр Кудряшов on 21.12.2023.
 //
 
+import Combine
 import Foundation
 
-final class ApartmentService {
-    private let networkClient: NetworkClient
-    private(set) var apartments: ApartmentsModel?
+actor ApartmentService {
+    nonisolated private let networkClient: NetworkClient
+    nonisolated private let apartment: CurrentValueSubject<ApartmentModel?, Never>
     
     init(networkClient: NetworkClient = NetworkClient()) {
         self.networkClient = networkClient
+        self.apartment = CurrentValueSubject(nil)
     }
     
-    func fetchHotel() {
-        networkClient.fetch(endPoint: .apartment) { [weak self] (result: Result<ApartmentsModel,Error>) in
-            guard let self else { return }
-            switch result {
-            case (.success(let apartmentsNetwork)):
-                self.apartments = apartmentsNetwork
-            case (.failure(let error)):
-                print(error)
-            }
+    nonisolated func fetchApartment() {
+        Task { await getApartment() }
+    }
+    
+    private func getApartment() async {
+        do {
+            let apartmentModel: ApartmentModel = try await networkClient.request(endPoint: .apartment)
+            self.apartment.send(apartmentModel)
+        } catch let error {
+            print("Error getting Hotel: \(error.localizedDescription)")
+            self.apartment.send(nil)
         }
     }
 }

@@ -11,6 +11,8 @@ enum NetworkClientError: Error {
     case httpStatusCode(Int)
     case urlRequestError(Error)
     case urlSessionError
+    case urlParsingError
+    case customError(String)
 }
 
 extension NetworkClientError: LocalizedError {
@@ -29,6 +31,10 @@ extension NetworkClientError: LocalizedError {
             return L.Network.Error.urlRequestError
         case .urlSessionError:
             return L.Network.Error.urlSessionError
+        case .urlParsingError:
+            return L.Network.Error.parsingError
+        case .customError(let message):
+            return message
         }
     }
 }

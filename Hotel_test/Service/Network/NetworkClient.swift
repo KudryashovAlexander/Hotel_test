@@ -23,33 +23,29 @@ struct NetworkClient {
         self.decoder = decoder
     }
     
-    func fetch<T:Decodable>(endPoint: Endpoint,
-                            httpMethod: HttpMethod = .get,
-                            handler: @escaping(Result<T,Error>) -> Void) {
+    func request<T:Decodable>(endPoint: Endpoint,
+                              httpMethod: HttpMethod = .get) async throws -> T {
         
-        var request = URLRequest(url: endPoint.url!)
-        request.httpMethod = httpMethod.rawValue
+        var urlRequest = URLRequest(url: endPoint.url!)
+        urlRequest.httpMethod = httpMethod.rawValue
         
-        let task = session.dataTask(with: request) { data, response, error in
-            if error != nil {
-                handler(.failure(NetworkClientError.urlSessionError))
-                return
-            }
-            
-            if let response = response as? HTTPURLResponse,
-               response.statusCode < 200 || response.statusCode >= 300 {
-                handler(.failure(NetworkClientError.httpStatusCode(response.statusCode)))
-            }
-            
-            guard let data = data else { return }
+        let (data, response) = try await session.data(for: urlRequest)
+        let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 400
+        print(statusCode)
+        switch statusCode {
+        case 200..<300:
             do {
-                let decodedData = try decoder.decode(T.self, from: data)
-                handler(.success(decodedData))
+                return try decoder.decode(T.self, from: data)
             } catch {
-                handler(.failure(error))
+                throw NetworkClientError.urlParsingError
+            }
+        default:
+            do {
+                let error = try decoder.decode(NetworkErrorDescriptionModel.self, from: data)
+                throw NetworkClientError.customError("\(error)")
+            } catch {
+                throw NetworkClientError.httpStatusCode(statusCode)
             }
         }
-        task.resume()
     }
-    
 }
