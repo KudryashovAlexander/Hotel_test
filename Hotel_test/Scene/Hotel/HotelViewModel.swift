@@ -5,6 +5,7 @@
 //  Created by Александр Кудряшов on 19.12.2023.
 //
 
+import Combine
 import SwiftUI
 
 protocol HotelViewModelProtocol: ObservableObject {
@@ -33,9 +34,12 @@ final class HotelViewModel: HotelViewModelProtocol {
     private(set) var peculiarities: [String] = ["Бесплатный Wifi на всей территории отеля","1 км до пляжа","Бесплатный фитнес-клуб","20 км до аэропорта"]
     private(set) var mockImages = ["mockhotel1","mockhotel2","mockhotel3"]
     
-    private var hotelService = HotelService()
+    private var hotelService: HotelService
+    private var cancellables: Set<AnyCancellable>
     
-    init() {
+    init(hotelService: HotelService) {
+        self.hotelService = hotelService
+        self.cancellables = Set<AnyCancellable>()
         hotelService.fetchHotel()
     }
     
@@ -44,18 +48,16 @@ final class HotelViewModel: HotelViewModelProtocol {
         completion()
     }
     
-    func updateData() {
-//        guard let hotelModel = hotelService.hotel else { return }
-//        hotelName = hotelModel.name
-//        hotelAdress = hotelModel.adress
-//        hotelMinimalPrice = "от \((hotelModel.minimalPrice).priceString())"
-//        priceForIt = hotelModel.priceForIt
-//        rating = hotelModel.rating
-//        ratingName = hotelModel.ratingName
-//        imageURLs = hotelModel.imageUrls
-//        description = hotel
-//        peculiarities
-//        mockImages
+    func bindOn() {
+        hotelService.hotel
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] hotelModel in
+                if let hotelModel = hotelModel {
+                    self?.hotelName = hotelModel.name
+                    self?.hotelAdress = hotelModel.adress
+                    self?.hotelMinimalPrice = hotelModel.minimalPrice.priceString()
+                }
+            }.store(in: &cancellables)
     }
     
 }

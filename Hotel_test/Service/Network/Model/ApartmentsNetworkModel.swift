@@ -1,5 +1,5 @@
 //
-//  ApartmentModel.swift
+//  ApartmentNetworkModel.swift
 //  Hotel_test
 //
 //  Created by Александр Кудряшов on 20.12.2023.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-// MARK: - Apartments
-struct ApartmentsModel: Decodable {
-    let apartment: [ApartmentModel]
+// MARK: - ApartmentsNetworkModel
+struct ApartmentsNetworkModel: Decodable {
+    let apartment: [ApartmentNetworkModel]
 }
 
-// MARK: - Apartment
-struct ApartmentModel: Decodable {
+// MARK: - ApartmentNetworkModel
+struct ApartmentNetworkModel: Decodable {
     let id: Int
     let name: String
     let price: Int

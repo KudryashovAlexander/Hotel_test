@@ -1,5 +1,5 @@
 //
-//  HotelModel.swift
+//  HotelNetworkModel.swift
 //  Hotel_test
 //
 //  Created by Александр Кудряшов on 19.12.2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct HotelModel: Decodable {
+// MARK: - HotelNetworkModel
+struct HotelNetworkModel: Decodable {
     let id: Int
     let name, adress: String
     let minimalPrice: Int
@@ -16,7 +16,7 @@ struct HotelModel: Decodable {
     let rating: Int
     let ratingName: String
     let imageUrls: [String]
-    let aboutTheHotel: AboutTheHotel
+    let aboutTheHotel: AboutTheHotelNetworkModel
 
     enum CodingKeys: String, CodingKey {
         case id, name, adress
@@ -29,8 +29,8 @@ struct HotelModel: Decodable {
     }
 }
 
-// MARK: - AboutTheHotel
-struct AboutTheHotel: Decodable {
+// MARK: - AboutTheHotelNetworkModel
+struct AboutTheHotelNetworkModel: Decodable {
     let description: String
     let peculiarities: [String]
 }

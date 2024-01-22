@@ -10,7 +10,7 @@ import Foundation
 
 actor BookingService {
     nonisolated private let networkClient: NetworkClient
-    nonisolated private let booking: CurrentValueSubject<BookingModel?, Never>
+    nonisolated let booking: CurrentValueSubject<BookingNetworkModel?, Never>
     
     init(networkClient: NetworkClient = NetworkClient()) {
         self.networkClient = networkClient
@@ -23,7 +23,7 @@ actor BookingService {
     
     private func getBooking() async {
         do {
-            let bookingModel: BookingModel = try await networkClient.request(endPoint: .apartment)
+            let bookingModel: BookingNetworkModel = try await networkClient.request(endPoint: .apartment)
             self.booking.send(bookingModel)
         } catch let error {
             print("Error getting Hotel: \(error.localizedDescription)")

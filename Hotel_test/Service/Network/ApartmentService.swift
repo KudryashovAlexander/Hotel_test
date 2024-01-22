@@ -10,11 +10,11 @@ import Foundation
 
 actor ApartmentService {
     nonisolated private let networkClient: NetworkClient
-    nonisolated private let apartment: CurrentValueSubject<ApartmentModel?, Never>
+    nonisolated let apartments: CurrentValueSubject<ApartmentsNetworkModel?, Never>
     
     init(networkClient: NetworkClient = NetworkClient()) {
         self.networkClient = networkClient
-        self.apartment = CurrentValueSubject(nil)
+        self.apartments = CurrentValueSubject(nil)
     }
     
     nonisolated func fetchApartment() {
@@ -23,11 +23,11 @@ actor ApartmentService {
     
     private func getApartment() async {
         do {
-            let apartmentModel: ApartmentModel = try await networkClient.request(endPoint: .apartment)
-            self.apartment.send(apartmentModel)
+            let apartmentsModel: ApartmentsNetworkModel = try await networkClient.request(endPoint: .apartment)
+            self.apartments.send(apartmentsModel)
         } catch let error {
             print("Error getting Hotel: \(error.localizedDescription)")
-            self.apartment.send(nil)
+            self.apartments.send(nil)
         }
     }
 }

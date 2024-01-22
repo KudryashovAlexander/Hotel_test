@@ -1,5 +1,5 @@
 //
-//  BookingModel.swift
+//  BookingNetworkModel.swift
 //  Hotel_test
 //
 //  Created by Александр Кудряшов on 20.12.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Booking
-struct BookingModel: Decodable {
+struct BookingNetworkModel: Decodable {
     let id: Int
     let hotelName, hotelAdress: String
     let horating: Int
