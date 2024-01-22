@@ -53,6 +53,7 @@
 		7FCB3D8C2B5E46E500EC20E7 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3D8B2B5E46E500EC20E7 /* HotelModel.swift */; };
 		7FCB3D8E2B5E470300EC20E7 /* ApartmentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3D8D2B5E470300EC20E7 /* ApartmentsModel.swift */; };
 		7FCB3D902B5E471300EC20E7 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3D8F2B5E471300EC20E7 /* BookingModel.swift */; };
+		7FCB3D922B5E5D8C00EC20E7 /* MockNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3D912B5E5D8C00EC20E7 /* MockNetworkData.swift */; };
 		7FFA9E962B31BD550055E253 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E952B31BD550055E253 /* swiftgen.yml */; };
 		7FFA9E9C2B31CD6F0055E253 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E9E2B31CD6F0055E253 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,7 @@
 		7FCB3D8B2B5E46E500EC20E7 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		7FCB3D8D2B5E470300EC20E7 /* ApartmentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsModel.swift; sourceTree = "<group>"; };
 		7FCB3D8F2B5E471300EC20E7 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
+		7FCB3D912B5E5D8C00EC20E7 /* MockNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkData.swift; sourceTree = "<group>"; };
 		7FFA9E952B31BD550055E253 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		7FFA9EA12B31CEC80055E253 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F162BC69E9F51F2AAB82E4 /* Pods-Hotel_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotel_test.debug.xcconfig"; path = "Target Support Files/Pods-Hotel_test/Pods-Hotel_test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		7FBCD3A32B34533300C0D6B2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7FCB3D912B5E5D8C00EC20E7 /* MockNetworkData.swift */,
 				7FBCD3A42B34535300C0D6B2 /* NetworkClient.swift */,
 				7FBCD3B22B35776700C0D6B2 /* NetworkClientError.swift */,
 				7FCB3D882B5CFD4E00EC20E7 /* NetworkErrorDescriptionModel.swift */,
@@ -500,6 +503,7 @@
 				7FBCD3A92B34538400C0D6B2 /* ApartmentService.swift in Sources */,
 				7FBCD3B72B39E92B00C0D6B2 /* PageViews.swift in Sources */,
 				7FBCD3A72B34537000C0D6B2 /* HotelService.swift in Sources */,
+				7FCB3D922B5E5D8C00EC20E7 /* MockNetworkData.swift in Sources */,
 				7FBCD3912B33504600C0D6B2 /* ApartmentsNetworkModel.swift in Sources */,
 				7F9CF9DA2B31903F005A4833 /* HotelNetworkModel.swift in Sources */,
 				7FCB3D8E2B5E470300EC20E7 /* ApartmentsModel.swift in Sources */,

@@ -24,17 +24,17 @@ struct ApartmentView: View {
     }
     
     private var images: some View {
-        PageViews(contentName: viewModel.imageUrls)
+        PageViews(contentName: viewModel.model.imageUrls)
     }
     
     private var name: some View {
-        Text(viewModel.name)
+        Text(viewModel.model.name)
             .font(.Medium.size22)
             .foregroundColor(.hBlack)
     }
     
     private var tags: some View {
-        TagsView(viewModel.peculiarities)
+        TagsView(viewModel.model.peculiarities)
     }
     
     private var aboutApartment: some View {
@@ -52,10 +52,10 @@ struct ApartmentView: View {
     
     private var price: some View {
         HStack(alignment: .bottom, spacing: Constants.Price.spacingH) {
-            Text(viewModel.price.priceString())
+            Text(viewModel.model.price)
                 .font(.SemiBold.size30)
                 .foregroundColor(.hBlack)
-            Text(viewModel.pricePer)
+            Text(viewModel.model.pricePer)
                 .font(.Regular.size16)
                 .foregroundColor(.hGray)
         }
@@ -85,6 +85,6 @@ struct ApartmentView: View {
     
 }
 
-#Preview {
-    ApartmentView(viewModel:ApartmentViewModel())
-}
+//#Preview {
+//    ApartmentView(viewModel:ApartmentViewModel())
+//}

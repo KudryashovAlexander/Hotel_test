@@ -12,7 +12,7 @@ struct BookingView: View {
     @EnvironmentObject private var coordinator: Coordinator
     @ObservedObject private var viewModel: BookingViewModel
     
-    init(viewModel:BookingViewModel = BookingViewModel()) {
+    init(viewModel:BookingViewModel) {
         self.viewModel = viewModel
     }
     
@@ -36,13 +36,13 @@ struct BookingView: View {
     private var hotelName: some View {
         VStack(alignment: .leading ,spacing:Constants.HotelName.spacingV) {
             HStack {
-                RatingView(rating: viewModel.rating, score: viewModel.ratingName)
+                RatingView(rating: viewModel.model.rating, score: viewModel.model.ratingName)
                 Spacer()
             }
-            Text(viewModel.hotelName)
+            Text(viewModel.model.hotelName)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
-            Text(viewModel.hotelAdress)
+            Text(viewModel.model.hotelAdress)
                 .font(.Medium.size14)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.hBlue)
@@ -53,20 +53,20 @@ struct BookingView: View {
     private var detail: some View {
         VStack(spacing:Constants.HotelName.spacingV) {
             detailView(name: L.Booking.Detail.departure,
-                       detail: viewModel.departure)
+                       detail: viewModel.model.departure)
             detailView(name: L.Booking.Detail.countryCity,
-                       detail: viewModel.arrivalCountry)
+                       detail: viewModel.model.arrivalCountry)
             detailView(name: L.Booking.Detail.date,
-                       detail: viewModel.tourDateStart + "-" + viewModel.tourDateStop )
+                       detail: viewModel.model.tourDateStart + "-" + viewModel.model.tourDateStop )
             // TODO: -  Исправить
             detailView(name: L.Booking.Detail.numberDays,
-                       detail: L.numberOfdays(viewModel.numberOfNights))
+                       detail: L.numberOfdays(viewModel.model.numberOfNights))
             detailView(name: L.Booking.Detail.hotel,
-                       detail: viewModel.hotelName)
+                       detail: viewModel.model.hotelName)
             detailView(name: L.Booking.Detail.apartment,
-                       detail: viewModel.room)
+                       detail: viewModel.model.room)
             detailView(name: L.Booking.Detail.eating,
-                       detail: viewModel.nutrition)
+                       detail: viewModel.model.nutrition)
         }
         .modify()
     }
@@ -113,10 +113,10 @@ struct BookingView: View {
     
     private var price: some View {
         VStack(spacing: Constants.Price.spacingV) {
-            priceView(name: L.Booking.Pay.tour, price: viewModel.tourPrice.priceString())
-            priceView(name: L.Booking.Pay.fuelСollection, price: viewModel.fuelCharge.priceString())
-            priceView(name: L.Booking.Pay.serviceFee, price: viewModel.serviceCharge.priceString())
-            priceView(name: L.Booking.Pay.paid, price: viewModel.totalPrice.priceString())
+            priceView(name: L.Booking.Pay.tour, price: viewModel.model.tourPrice)
+            priceView(name: L.Booking.Pay.fuelСollection, price: viewModel.model.fuelCharge)
+            priceView(name: L.Booking.Pay.serviceFee, price: viewModel.model.serviceCharge)
+            priceView(name: L.Booking.Pay.paid, price: viewModel.model.totalPrice)
         }
         .modify()
     }
@@ -124,7 +124,7 @@ struct BookingView: View {
     private var button: some View {
         VStack {
             Divider()
-            ButtonView(text: L.Booking.button + " " + viewModel.totalPrice.priceString()) {
+            ButtonView(text: L.Booking.button + " " + viewModel.model.totalPrice) {
                 viewModel.pressButton {
                     coordinator.push(.resultOrder)
                 }
@@ -203,6 +203,6 @@ struct BookingView: View {
     
 }
 
-#Preview {
-    BookingView()
-}
+//#Preview {
+//    BookingView()
+//}

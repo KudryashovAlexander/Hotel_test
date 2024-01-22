@@ -23,7 +23,7 @@ struct ApartmentsView: View {
     
     var apartments: some View {
         VStack(spacing:Constants.spacingV) {
-            ForEach(viewModel.apartmentArray, id: \.self) { apartment in
+            ForEach(viewModel.apartments, id: \.self) { apartment in
                 ApartmentView(viewModel: apartment)
             }
             .modify()
@@ -37,6 +37,6 @@ struct ApartmentsView: View {
     
 }
 
-#Preview {
-    ApartmentsView(viewModel: ApartmentsViewModel())
-}
+//#Preview {
+//    ApartmentsView(viewModel: ApartmentsViewModel())
+//}

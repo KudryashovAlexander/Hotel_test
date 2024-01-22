@@ -29,21 +29,21 @@ struct HotelView: View {
         VStack(alignment:.leading, spacing: Constants.Hotel.spacing) {
             imageScroll
             HStack {
-                RatingView(rating: viewModel.rating, score: viewModel.ratingName)
+                RatingView(rating: viewModel.model.rating, score: viewModel.model.ratingName)
                 Spacer()
             }
-            Text(viewModel.hotelName)
+            Text(viewModel.model.name)
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
-            Text(viewModel.hotelAdress)
+            Text(viewModel.model.adress)
                 .font(.Medium.size14)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.hBlue)
             HStack(alignment:.bottom) {
-                Text(viewModel.hotelMinimalPrice)
+                Text(viewModel.model.minimalPrice)
                     .font(.SemiBold.size30)
                     .foregroundColor(.hBlack)
-                Text(viewModel.priceForIt)
+                Text(viewModel.model.priceForIt)
                     .font(.Regular.size16)
                     .foregroundColor(.hGray)
             }
@@ -57,7 +57,7 @@ struct HotelView: View {
                 .font(.Medium.size22)
                 .foregroundColor(.hBlack)
             tag
-            Text(viewModel.description)
+            Text(viewModel.model.description)
                 .font(.Regular.size16)
            
             VStack {
@@ -84,7 +84,7 @@ struct HotelView: View {
     }
     
     private var tag: some View {
-        TagsView(viewModel.peculiarities)
+        TagsView(viewModel.model.peculiarities)
     }
     
     private var button: some View {
@@ -101,7 +101,7 @@ struct HotelView: View {
     }
     
     private var imageScroll: some View {
-        PageViews(contentName: viewModel.mockImages)
+        PageViews(contentName: viewModel.model.imageUrls)
     }
     
     private var aboutdetail: some View {
@@ -154,6 +154,6 @@ struct HotelView: View {
     }
 }
 
-#Preview {
-    HotelView(viewModel: HotelViewModel())
-}
+//#Preview {
+//    HotelView(viewModel: HotelViewModel())
+//}

@@ -9,10 +9,10 @@ import Foundation
 
 // MARK: - ApartmentsModel
 struct ApartmentsModel {
-    let apartment: [ApartmentModel]
+    let apartments: [ApartmentModel]
     
-    init(apartment: [ApartmentModel]) {
-        self.apartment = apartment
+    init(networkModel: [ApartmentNetworkModel]) {
+        self.apartments = networkModel.map { ApartmentModel(networkModel: $0)}
     }
 }
 
@@ -20,17 +20,17 @@ struct ApartmentsModel {
 struct ApartmentModel {
     let id: Int
     let name: String
-    let price: Int
+    let price: String
     let pricePer: String
     let peculiarities: [String]
     let imageUrls: [String]
     
-    init(id: Int, name: String, price: Int, pricePer: String, peculiarities: [String], imageUrls: [String]) {
-        self.id = id
-        self.name = name
-        self.price = price
-        self.pricePer = pricePer
-        self.peculiarities = peculiarities
-        self.imageUrls = imageUrls
+    init(networkModel: ApartmentNetworkModel) {
+        self.id = networkModel.id
+        self.name = networkModel.name
+        self.price = networkModel.price.priceString()
+        self.pricePer = networkModel.pricePer
+        self.peculiarities = networkModel.peculiarities
+        self.imageUrls = networkModel.imageUrls
     }
 }

@@ -12,7 +12,7 @@ actor BookingService {
     nonisolated private let networkClient: NetworkClient
     nonisolated let booking: CurrentValueSubject<BookingNetworkModel?, Never>
     
-    init(networkClient: NetworkClient = NetworkClient()) {
+    init(networkClient: NetworkClient) {
         self.networkClient = networkClient
         self.booking = CurrentValueSubject(nil)
     }

@@ -9,10 +9,15 @@ import Foundation
 
 protocol ApartmentsViewModelProtocol: ObservableObject {
     var titleName: String { get }
-    var apartmentArray: [ApartmentViewModel] { get }
+    var apartments: [ApartmentViewModel] { get }
 }
 
 final class ApartmentsViewModel: ApartmentsViewModelProtocol {
     private(set) var titleName: String = "Steigenberger Makadi"
-    private(set) var apartmentArray: [ApartmentViewModel] = [ApartmentViewModel(), ApartmentViewModel()]
+    private(set) var apartments: [ApartmentViewModel]
+    
+    init(titleName: String, apartments: [ApartmentViewModel]) {
+        self.titleName = titleName
+        self.apartments = apartments
+    }
 }
