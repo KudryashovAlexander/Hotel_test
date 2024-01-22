@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Booking
+// MARK: - BookingNetworkModel
 struct BookingNetworkModel: Decodable {
     let id: Int
     let hotelName, hotelAdress: String
