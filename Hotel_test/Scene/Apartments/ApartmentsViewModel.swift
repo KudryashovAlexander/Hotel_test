@@ -22,8 +22,8 @@ final class ApartmentsViewModel: ApartmentsViewModelProtocol {
     @Published var isGetting: Bool?
     private var cancellables: Set<AnyCancellable>
     
-    init(apartments: [ApartmentViewModel], apartmentService: ApartmentService) {
-        self.apartments = apartments
+    init(apartmentService: ApartmentService) {
+        self.apartments = ApartmentsViewModel.calculateApartments(networkModel: MockNetworkData.apartments)
         self.apartmentService = apartmentService
         self.cancellables = Set<AnyCancellable>()
         bindOn()
@@ -34,12 +34,17 @@ final class ApartmentsViewModel: ApartmentsViewModelProtocol {
         apartmentService.apartments
             .receive(on: DispatchQueue.main)
             .sink { [weak self] apartmentsNetworkModel in
+                guard let self else { return }
                 if let apartmentsNetworkModel = apartmentsNetworkModel {
-                    let apartmentModels = apartmentsNetworkModel.rooms.map {
-                        ApartmentModel(networkModel: $0) }
-                    self?.apartments = apartmentModels.map { ApartmentViewModel(model: $0)}
-                    self?.isGetting = true
+                    self.apartments = ApartmentsViewModel.calculateApartments(networkModel: apartmentsNetworkModel)
+                    self.isGetting = true
                 }
             }.store(in: &cancellables)
+    }
+    
+    static func calculateApartments(networkModel: ApartmentsNetworkModel) -> [ApartmentViewModel] {
+        let apartmentModels = networkModel.rooms.map {
+            ApartmentModel(networkModel: $0) }
+        return apartmentModels.map { ApartmentViewModel(model: $0)}
     }
 }

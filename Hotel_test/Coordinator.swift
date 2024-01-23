@@ -50,26 +50,19 @@ class Coordinator: ObservableObject {
     
     @ViewBuilder
     private func hotelView() -> some View {
-        let model = HotelModel(networkModel: MockNetworkData.hotel)
-        let viewModel = HotelViewModel(model:model,
-                                       hotelService: hotelService)
+        let viewModel = HotelViewModel(hotelService: hotelService)
         HotelView(viewModel: viewModel)
     }
     
     @ViewBuilder
     private func apartmentsView() -> some View {
-        let apartmentsModels = MockNetworkData.apartments.rooms.map { ApartmentModel(networkModel: $0)}
-        let apartmentsViewModels = apartmentsModels.map { ApartmentViewModel(model: $0) }
-        let viewModel = ApartmentsViewModel(apartments: apartmentsViewModels,
-                                            apartmentService: apartmentService)
+        let viewModel = ApartmentsViewModel(apartmentService: apartmentService)
         ApartmentsView(viewModel: viewModel)
     }
     
     @ViewBuilder
     private func bookingView() -> some View {
-        let model = BookingModel(networkModel: MockNetworkData.booking)
-        let viewModel = BookingViewModel(model: model,
-                                         bookingService: bookingService)
+        let viewModel = BookingViewModel(bookingService: bookingService)
         BookingView(viewModel: viewModel)
     }
 

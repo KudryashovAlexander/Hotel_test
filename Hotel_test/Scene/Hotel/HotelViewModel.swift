@@ -21,8 +21,8 @@ final class HotelViewModel: HotelViewModelProtocol {
     private var hotelService: HotelService
     private var cancellables: Set<AnyCancellable>
     
-    init(model:HotelModel, hotelService: HotelService) {
-        self.model = model
+    init(hotelService: HotelService) {
+        self.model = HotelModel(networkModel: MockNetworkData.hotel)
         self.hotelService = hotelService
         self.cancellables = Set<AnyCancellable>()
         bindOn()
@@ -43,4 +43,5 @@ final class HotelViewModel: HotelViewModelProtocol {
                 }
             }.store(in: &cancellables)
     }
+    
 }

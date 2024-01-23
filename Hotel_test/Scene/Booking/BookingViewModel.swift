@@ -27,8 +27,8 @@ final class BookingViewModel: BookingViewModelProtocol {
     @Published var isGetting: Bool?
     private var cancellables: Set<AnyCancellable>
     
-    init(model: BookingModel, bookingService: BookingService) {
-        self.model = model
+    init(bookingService: BookingService) {
+        self.model = BookingModel(networkModel: MockNetworkData.booking)
         self.cancellables = Set<AnyCancellable>()
         self.bookingService = bookingService
         bindOn()

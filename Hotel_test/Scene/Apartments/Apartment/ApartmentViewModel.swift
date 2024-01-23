@@ -22,7 +22,6 @@ final class ApartmentViewModel: ApartmentViewModelProtocol {
     
     // MARK: - Methods
     func pressButton(completion: () -> Void) {
-        // TODO: -
         completion()
     }
 
