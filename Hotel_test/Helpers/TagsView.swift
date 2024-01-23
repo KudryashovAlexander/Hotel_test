@@ -49,7 +49,7 @@ struct TagsView: View {
                             }
                             return result
                         })
-                        .alignmentGuide(.top, computeValue: { d in
+                        .alignmentGuide(.top, computeValue: { _ in
                             let result = height
                             if tag == self.tags.last! {
                                 height = 0

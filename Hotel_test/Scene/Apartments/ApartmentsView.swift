@@ -12,13 +12,18 @@ struct ApartmentsView: View {
     @ObservedObject var viewModel: ApartmentsViewModel
     
     var body: some View {
-        VStack {
-            ScrollView {
-                apartments
+        if viewModel.isGetting == true {
+            VStack {
+                ScrollView {
+                    apartments
+                }
+                .background(Color.hLightGrayPhone)
             }
-            .background(Color.hLightGrayPhone)
+            .modifyNavigation(title: viewModel.titleName)
+        } else {
+            ProgressView()
+                .modifyNavigation(title: "")
         }
-        .modifyNavigation(title: viewModel.titleName)
     }
     
     var apartments: some View {
@@ -37,6 +42,6 @@ struct ApartmentsView: View {
     
 }
 
-//#Preview {
+// #Preview {
 //    ApartmentsView(viewModel: ApartmentsViewModel())
-//}
+// }

@@ -19,7 +19,7 @@ struct HotelModel {
     let description: String
     let peculiarities: [String]
     
-    init(networkModel: HotelNetworkModel){
+    init(networkModel: HotelNetworkModel) {
         self.id = networkModel.id
         self.name = networkModel.name
         self.adress = networkModel.adress

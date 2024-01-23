@@ -11,18 +11,22 @@ struct HotelView: View {
     
     @EnvironmentObject private var coordinator: Coordinator
     
-    var viewModel: HotelViewModel
+    @ObservedObject var viewModel: HotelViewModel
     
     var body: some View {
-        VStack {
-            ScrollView {
-                hotel
-                aboutHotel
+        if viewModel.isGetting == true {
+            VStack {
+                ScrollView {
+                    hotel
+                    aboutHotel
+                }
+                .background(.hLightGrayPhone)
+                button
             }
-            .background(.hLightGrayPhone)
-            button
+            .navigationTitle(L.Hotel.title)
+        } else {
+            ProgressView()
         }
-        .navigationTitle(L.Hotel.title)        
     }
     
     private var hotel: some View {
@@ -101,13 +105,7 @@ struct HotelView: View {
     }
     
     private var imageScroll: some View {
-        PageViews(contentName: viewModel.model.imageUrls)
-    }
-    
-    private var aboutdetail: some View {
-        VStack {
-            //TODO: -
-        }
+        PageViews(contentName: viewModel.model.imageUrls, isURL: true)
     }
     
     // MARK: - Methods
@@ -154,6 +152,6 @@ struct HotelView: View {
     }
 }
 
-//#Preview {
+// #Preview {
 //    HotelView(viewModel: HotelViewModel())
-//}
+// }

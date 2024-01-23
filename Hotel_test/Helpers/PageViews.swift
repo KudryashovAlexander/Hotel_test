@@ -28,7 +28,8 @@ struct PageViews: View {
                                 .resizable()
                         } else {
                             let url = URL(string:imageName)!
-                            let placeholderImage = A.Images.noImage.name // TODO: -  доработать
+                            // TODO: -  доработать
+//                            let placeholderImage = A.Images.noImage.name
                             KFImage.url(url)
                                 .resizable()
                         }

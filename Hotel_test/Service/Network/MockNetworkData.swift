@@ -13,7 +13,7 @@ enum MockNetworkData {
     static let booking = bookingNetworkModel
 }
 
-fileprivate let hotelNetworkModel = HotelNetworkModel(id: 1,
+private let hotelNetworkModel = HotelNetworkModel(id: 1,
                                           name: "Steigenberger Makadi",
                                           adress: "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
                                           minimalPrice: 134673,
@@ -21,8 +21,13 @@ fileprivate let hotelNetworkModel = HotelNetworkModel(id: 1,
                                           rating: 5,
                                           ratingName: "Превосходно",
                                           imageUrls: [],
-                                          aboutTheHotel: AboutTheHotelNetworkModel(description: "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!",
-                                                                                   peculiarities: ["Бесплатный Wifi на всей территории отеля","1 км до пляжа","Бесплатный фитнес-клуб","20 км до аэропорта"]))
+                                          aboutTheHotel: AboutTheHotelNetworkModel(
+                                            description: "Отель VIP-класса с собственными гольф полями. "
+                                            + "Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. "
+                                            + "Отель принимает гостей от 18 лет!",
+                                            peculiarities: ["Бесплатный Wifi на всей территории" +
+                                                            " отеля","1 км до пляжа","Бесплатный " +
+                                                            "фитнес-клуб","20 км до аэропорта"]))
 
 private let apartmentNetworkModel1 = ApartmentNetworkModel(id: 0,
                                                   name: "Стандартный номер с видом на бассейн",
@@ -39,9 +44,9 @@ private let apartmentNetworkModel2 = ApartmentNetworkModel(id: 1,
                                                                   "Кондиционер"],
                                                   imageUrls: [])
 
-fileprivate let apartmentNetworkModel = ApartmentsNetworkModel(apartment: [apartmentNetworkModel1, apartmentNetworkModel2])
+private let apartmentNetworkModel = ApartmentsNetworkModel(rooms:[apartmentNetworkModel1, apartmentNetworkModel2])
 
-fileprivate let bookingNetworkModel = BookingNetworkModel(id: 0,
+private let bookingNetworkModel = BookingNetworkModel(id: 0,
                                               hotelName: "Steigenberger Makadi",
                                               hotelAdress: "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
                                               horating: 5,

@@ -44,6 +44,7 @@ struct NetworkClient {
                 let error = try decoder.decode(NetworkErrorDescriptionModel.self, from: data)
                 throw NetworkClientError.customError("\(error)")
             } catch {
+                print(error.localizedDescription)
                 throw NetworkClientError.httpStatusCode(statusCode)
             }
         }

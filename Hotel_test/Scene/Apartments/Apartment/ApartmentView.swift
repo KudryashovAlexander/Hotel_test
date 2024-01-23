@@ -24,7 +24,7 @@ struct ApartmentView: View {
     }
     
     private var images: some View {
-        PageViews(contentName: viewModel.model.imageUrls)
+        PageViews(contentName: viewModel.model.imageUrls, isURL: true)
     }
     
     private var name: some View {
@@ -85,6 +85,6 @@ struct ApartmentView: View {
     
 }
 
-//#Preview {
+// #Preview {
 //    ApartmentView(viewModel:ApartmentViewModel())
-//}
+// }

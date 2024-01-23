@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - HotelNetworkModel
-struct HotelNetworkModel: Decodable {
+struct HotelNetworkModel: Codable {
     let id: Int
     let name, adress: String
     let minimalPrice: Int
@@ -30,7 +30,7 @@ struct HotelNetworkModel: Decodable {
 }
 
 // MARK: - AboutTheHotelNetworkModel
-struct AboutTheHotelNetworkModel: Decodable {
+struct AboutTheHotelNetworkModel: Codable {
     let description: String
     let peculiarities: [String]
 }

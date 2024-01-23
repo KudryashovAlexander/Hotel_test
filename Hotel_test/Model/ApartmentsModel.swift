@@ -11,8 +11,8 @@ import Foundation
 struct ApartmentsModel {
     let apartments: [ApartmentModel]
     
-    init(networkModel: [ApartmentNetworkModel]) {
-        self.apartments = networkModel.map { ApartmentModel(networkModel: $0)}
+    init(networkModel: ApartmentsNetworkModel) {
+        self.apartments = networkModel.rooms.map { ApartmentModel(networkModel: $0)}
     }
 }
 

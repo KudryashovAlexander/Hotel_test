@@ -16,6 +16,7 @@ protocol HotelViewModelProtocol: ObservableObject {
 final class HotelViewModel: HotelViewModelProtocol {
     
     private(set) var model: HotelModel
+    @Published var isGetting: Bool?
     
     private var hotelService: HotelService
     private var cancellables: Set<AnyCancellable>
@@ -24,11 +25,22 @@ final class HotelViewModel: HotelViewModelProtocol {
         self.model = model
         self.hotelService = hotelService
         self.cancellables = Set<AnyCancellable>()
+        bindOn()
         hotelService.fetchHotel()
     }
     
     func pressButton(_ completion: () -> Void) {
-        //
         completion()
+    }
+    
+    func bindOn() {
+        hotelService.hotel
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] hotelNetworkModel in
+                if let hotelNetworkModel = hotelNetworkModel {
+                    self?.model = HotelModel(networkModel: hotelNetworkModel)
+                    self?.isGetting = true
+                }
+            }.store(in: &cancellables)
     }
 }

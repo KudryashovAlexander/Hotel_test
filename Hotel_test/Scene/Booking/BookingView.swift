@@ -17,20 +17,26 @@ struct BookingView: View {
     }
     
     var body: some View {
-        VStack {
-            ScrollView {
-                VStack(spacing: Constants.spacingV) {
-                    hotelName
-                    detail
-                    buyer
-                    tourists
-                    price
+        if viewModel.isGetting == true {
+            VStack {
+                ScrollView {
+                    VStack(spacing: Constants.spacingV) {
+                        hotelName
+                        detail
+                        buyer
+                        tourists
+                        price
+                    }
                 }
+                .background(Color.hLightGrayPhone)
+                button
             }
-            .background(Color.hLightGrayPhone)
-            button
+            .modifyNavigation(title: L.Booking.title)
+        } else {
+            ProgressView()
+                .modifyNavigation(title: "")
         }
-        .modifyNavigation(title: L.Booking.title)
+        
     }
     
     private var hotelName: some View {
@@ -203,6 +209,6 @@ struct BookingView: View {
     
 }
 
-//#Preview {
+// #Preview {
 //    BookingView()
-//}
+// }

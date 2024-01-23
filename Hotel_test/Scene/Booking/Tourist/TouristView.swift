@@ -103,7 +103,6 @@ struct TouristView: View {
             .modifyTF()
     }
     
-
     private var passportEndDayTextField: some View {
         TextField(L.Booking.Tourist.passportEndDay, text: Binding(
                    get: {

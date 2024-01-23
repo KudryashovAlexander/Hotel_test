@@ -4,7 +4,7 @@
 //
 //  Created by Александр Кудряшов on 18.01.2024.
 //
-
+import Combine
 import SwiftUI
 
 class Coordinator: ObservableObject {
@@ -58,19 +58,21 @@ class Coordinator: ObservableObject {
     
     @ViewBuilder
     private func apartmentsView() -> some View {
-        let apartmentsModels = MockNetworkData.apartments.apartment.map { ApartmentModel(networkModel: $0)}
+        let apartmentsModels = MockNetworkData.apartments.rooms.map { ApartmentModel(networkModel: $0)}
         let apartmentsViewModels = apartmentsModels.map { ApartmentViewModel(model: $0) }
-        let viewModel = ApartmentsViewModel(titleName: "Steigenberger Makadi",
-                                            apartments: apartmentsViewModels)
+        let viewModel = ApartmentsViewModel(apartments: apartmentsViewModels,
+                                            apartmentService: apartmentService)
         ApartmentsView(viewModel: viewModel)
     }
     
     @ViewBuilder
     private func bookingView() -> some View {
         let model = BookingModel(networkModel: MockNetworkData.booking)
-        let viewModel = BookingViewModel(model: model)
+        let viewModel = BookingViewModel(model: model,
+                                         bookingService: bookingService)
         BookingView(viewModel: viewModel)
     }
+
 }
 
 enum Page: String, Identifiable {

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - ApartmentsNetworkModel
 struct ApartmentsNetworkModel: Decodable {
-    let apartment: [ApartmentNetworkModel]
+    let rooms: [ApartmentNetworkModel]
 }
 
 // MARK: - ApartmentNetworkModel

@@ -23,7 +23,7 @@ actor BookingService {
     
     private func getBooking() async {
         do {
-            let bookingModel: BookingNetworkModel = try await networkClient.request(endPoint: .apartment)
+            let bookingModel: BookingNetworkModel = try await networkClient.request(endPoint: .booking)
             self.booking.send(bookingModel)
         } catch let error {
             print("Error getting Hotel: \(error.localizedDescription)")

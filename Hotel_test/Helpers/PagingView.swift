@@ -57,7 +57,8 @@ struct PagingView: View {
                 )
             }
             .clipped()
-            //PageControl(index: $index ,maxIndex: maxIndex)
+            // TODO: - Доработать
+            // PageControl(index: $index ,maxIndex: maxIndex)
         }
     }
     
@@ -76,46 +77,6 @@ struct PagingView: View {
         return newIndex
     }
 }
-
-//struct PageControl: View {
-//    @Binding var index: Int
-//    let maxIndex: Int
-//    
-//    init(index: Int,maxIndex: Int) {
-//        self.index = index
-//        self.maxIndex = maxIndex
-//    }
-//    
-//    var body: some View {
-//        HStack(spacing:Constants.spacing) {
-//            ForEach(0...maxIndex, id: \.self) { index in
-//               Circle()
-//                    .fill(circleColor(index: index))
-//                    .frame(width: Constants.radius, height: Constants.radius)
-//            }
-//        }
-//        .background(Color.white)
-//        .padding(.horizontal, Constants.paddingH)
-//        .padding(.vertical, Constants.paddingV)
-//    }
-//    
-//    private func circleColor(index: Int) -> Color {
-//        let difference = abs(index - self.index)
-//        if difference < 4 {
-//            return Color.black.opacity(Constants.opacity[difference])
-//        } else {
-//            return Color.black.opacity(Constants.opacity.last!)
-//        }
-//    }
-//    
-//    private enum Constants {
-//        static let spacing: CGFloat = 5
-//        static let radius: CGFloat = 7
-//        static let paddingH: CGFloat = 10
-//        static let paddingV: CGFloat = 5
-//        static let opacity: [Double] = [1, 0.22, 0.17, 0.10, 0.05]
-//    }
-//}
 
 struct PagingView_Previews: PreviewProvider {
     
