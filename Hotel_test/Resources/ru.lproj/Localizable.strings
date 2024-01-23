@@ -1,0 +1,66 @@
+//Hotel
+"hotel.title" = "Отель";
+"hotel.about" = "Об отеле";
+"hotel.conveniences" = "Удобства";
+"hotel.included" = "Что включено";
+"hotel.noIncluded" = "Что не включено";
+"hotel.necessary" = "Самое необходимое";
+
+"hotel.button" = "К выбору номера";
+
+
+//Apartment
+"apartment.button" = "Выбрать номер";
+"apartment.aboutApartment" = "Подробнее о номере";
+
+// Booking
+"booking.title" = "Бронирование";
+"booking.detail.departure" = "Вылет из";
+"booking.detail.countryCity" = "Страна, город";
+"booking.detail.date" = "Даты";
+"booking.detail.numberDays" = "Кол-во дней";
+"booking.detail.hotel" = "Отель";
+"booking.detail.apartment" = "Номер";
+"booking.detail.eating" = "Питание";
+
+"booking.byer.information" = "Информация о покупателе";
+"booking.byer.phone" = "Номер телефона";
+"booking.byer.mail" = "Почта";
+"booking.byer.comment" = "Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту";
+
+"booking.tourist.first" = "Первый турист";
+"booking.tourist.second" = "Второй турист";
+"booking.tourist.third" = "Третий турист";
+"booking.tourist.four" = "Четвертый турист";
+"booking.tourist.five" = "Пятый турист";
+"booking.tourist.six" = "Шестой турист";
+"booking.tourist.default" = "-й турист";
+"booking.tourist.add" = "Добавить туриста";
+"booking.tourist.name" = "Имя";
+"booking.tourist.surName" = "Фамилия";
+"booking.tourist.birthday" = "Дата рождения";
+"booking.tourist.nationality" = "Гражданство";
+"booking.tourist.passport" = "Номер загранпаспорта";
+"booking.tourist.passportEndDay" = "Срок действия загранпаспорта";
+
+"booking.pay.tour" = "Тур";
+"booking.pay.fuelСollection" = "Топливный сбор";
+"booking.pay.serviceFee" = "Сервисный сбор";
+"booking.pay.paid" = "К оплате";
+
+"booking.button" = "Оплатить";
+
+// Order
+"order.title" = "Заказ оплачен";
+"order.result" = "Ваш заказ принят в работу";
+"order.comment" = "Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.";
+"order.button" = "Супер!";
+
+//network
+"network.error.httpStatusCode" = "Что-то пошло не так";
+"network.error.httpStatusCode4xx" = "Ошибка клиента";
+"network.error.httpStatusCode5xx" = "Ошибка сервера";
+"network.error.httpStatusCode429" = "Слишком много запросов. Попробуйте снова позже.";
+"network.error.urlRequestError" = "Что-то пошло не так";
+"network.error.urlSessionError" = "Что-то пошло не так";
+"network.error.parsingError" = "Не удалось обработать ответ сервера";
